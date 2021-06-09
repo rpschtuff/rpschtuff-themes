@@ -1,0 +1,1501 @@
+<!-- 
+
+DO:
+- Like/reblog the original post if you use this theme.
+- Edit this theme however you wish FOR PERSONAL USE.
+
+DO NOT:
+- Remove, move, or edit my credit IN ANY WAY.
+- Use any elements of this theme in paid commission work without permission.
+
+CREDITS:
+- Theme Skeleton: @evansyhelp
+- Custom Tooltips: @easy-html-tutorials
+- Custom Scrollbars: @help-with-coding
+
+TIPS:
+- To show your pages, use the "show a link to this page" button on the page editor. Whatever you type into the Page Title box will appear on hover.
+- TransparentTextures.com and SubtlePatterns.com are excellent places to find seamless tiling images for the background and container.
+- PNGMart has lots of transparent images that would work well for the sidebar.
+CUSTOM PAGES:
+- Muse Page: https://pastebin.com/WujYp3nw
+- Timeline Page: https://pastebin.com/YMn1KPjb
+- Verses/Muses Page: https://pastebin.com/tzSpz4HU
+
+-->
+
+
+<!-- THEME SKELETON PROVIDED BY EVANSYHELP. -->
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>{Title}</title>
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+    {block:Description}
+        <meta name="description" content="{MetaDescription}" />
+    {/block:Description}
+    
+<!-- META TAGS, SCRIPTS, AND CUSTOM FONTS GO HERE-->
+
+
+<link href="https://fonts.googleapis.com/css?family=Sulphur+Point&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative:700&display=swap" rel="stylesheet">
+<script src="//use.edgefonts.net/la-belle-aurore.js"></script>
+
+
+<!-- CUSTOM TOOLTIPS BY @HTMLQUEENS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script src="https://static.tumblr.com/iuw14ew/VSQma1786/jquery.style-my-tooltips.js"></script>
+<script>
+(function($){
+$(document).ready(function(){
+$("a[title]").style_my_tooltips({
+tip_follows_cursor:true,
+tip_delay_time:50,
+tip_fade_speed:200,
+attribute:"title"
+});
+});
+})(jQuery);
+</script>
+
+
+<meta name="image:background" content="https://static.tumblr.com/lx2k5db/XAYq3afwe/light-wool.png" />
+<meta name="image:container bg" content="https://static.tumblr.com/lx2k5db/Pijq3afwt/light-gray.png" />
+<meta name="image:side pic" content="https://static.tumblr.com/lx2k5db/2eHq3afxe/sophie-turner-png-picture.png" />
+<meta name="color:background" content="#661a1a" />
+<meta name="color:container" content="#f6f6f6" />
+<meta name="color:text" content="#444444" />
+<meta name="color:bold" content="#000000" />
+<meta name="color:italic" content="#000000" />
+<meta name="color:links" content="#cc3434" />
+<meta name="color:links hover" content="#222222" />
+<meta name="color:borders" content="#bc7070" />
+<meta name="color:accent text" content="#ffffff" />
+<meta name="color:posts" content="#f6f6f6" />
+<meta name="text:sidebar title" content="title goes here" />
+<meta name="text:description" content="description goes here" />
+<meta name="text:nav link symbol" content="✦" />
+<meta name="text:home title" content="home" />
+<meta name="text:ask title" content="ask" />
+<meta name="text:submit title" content="submit" />
+<meta name="text:archive title" content="archive" />
+<meta name="text:your url" content="" />
+<meta name="if:show submit" content="1" />
+<meta name="if:show archive" content="1" />
+<meta name="if:circle sidebar" content="0" />
+
+        
+</head>
+<style type="text/css">
+
+.tooltip{
+    display: inline;
+    position: relative;
+}
+ 
+/* CUSTOM TOOLTIPS BY @HTMLQUEENS */
+#s-m-t-tooltip {
+    margin:10px 20px 10px 5px;
+    border:1px solid {color:borders};
+    background-image:url('{image:background}');
+    font-family:'cinzel decorative';
+    background-color:{color:background};
+    background-size:fill;
+    background-position:center;
+    padding:5px;
+    border-radius:3px;
+    font-size:0.8em;
+    color:{color:accent text};
+    text-align:center;
+    text-shadow:0 0 3px {color:borders};
+    line-height:18px;
+    z-index:99999;
+    transition:0.7s ease-in-out;
+                -o-transition:0.7s ease-in-out;
+                -ms-transition:0.7s ease-in-out;
+                -moz-transition:0.7s ease-in-out;
+                -webkit-transition:0.7s ease-in-out;
+}
+
+
+/* CUSTOM SCROLLBAR BY @HELP-WITH-CODING */
+::-webkit-scrollbar {
+width: 5px;
+background: transparent;
+z-index:-999999999;
+border-radius:7px;
+}
+ 
+::-webkit-scrollbar-thumb {
+background: {color:borders}; /* FF3.6-15 */
+border-radius:7px;
+}
+
+
+body {
+    background-color:{color:background};
+    background-image:url('{image:background}');
+    background-repeat:repeat;
+    color:{color:text};
+    font-family:'sulphur point';
+    font-size:75%;
+    letter-spacing:1px;
+    line-height:18px;
+}
+
+.ask b, .ask bold, .ask strong, .ask i, .ask em, .ask italic, .ask a {
+    color:{color:accent text};
+}
+
+.ask p {
+    margin:0;
+}
+
+small, sub, sup {
+    font-size:1em;
+}
+
+pre b, pre bold, pre strong, pre i, pre em, pre italic {
+    color:{color:accent text};
+}
+
+b, bold, strong  {
+    font-family: 'Cinzel Decorative', cursive;
+    letter-spacing:0.5px;
+    color:{color:bold};
+}
+
+i, em, italic {
+    font-family:'la-belle-aurore';
+    font-size:1.2em;
+    letter-spacing:0.5px;
+    font-style:normal;
+    color:{color:italic};
+}
+
+a {
+    color:{color:links};
+    text-decoration:none;
+    text-shadow:0 0 2px {color:links};
+    -webkit-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+}
+
+a:hover {
+    color:{color:links hover};
+    text-shadow:0 0 10px {color:links};
+    -webkit-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+}
+
+hr {
+    width:85%;
+    border-top:1px solid {color:borders};
+    height:0;
+}
+
+#container {
+    background-color:{color:container};
+    background-image:url('{image:container bg}');
+    background-repeat:repeat;
+    height:calc(100% - 60px);
+    position:fixed;
+    overflow:hidden;
+    width:940px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    border:1px solid {color:borders};
+    padding:10px;
+    box-shadow:0 0 15px #000000;
+    border-radius:5px;
+}
+
+#sb {
+    width:320px;
+    text-align:center;
+    position:fixed;
+    max-height:100%;
+    top:50%;
+    transform:translateY(-50%);
+    padding:20px;
+    overflow-y:scroll;
+}
+
+#sb img.sidepic {
+    position:relative;
+    z-index:-9999;
+    max-width:320px;
+    {block:ifNotCircleSidebar}
+    margin-bottom:-10px;
+    {/block:ifNotCircleSidebar}
+    {block:ifCircleSidebar}
+    margin-bottom:10px;
+    width:280px;
+    height:280px;
+    border-radius:50%;
+    border:1px solid {color:borders};
+    box-shadow:0 0 5px {color:borders};
+    object-fit:cover;
+    {/block:ifCircleSidebar}
+}
+
+#sidebar {
+    position:relative;
+    background-color:{color:posts};
+    text-align:justify;
+    border:1px solid {color:borders};
+    padding:20px;
+    box-shadow:0 0 5px {color:borders};
+    text-align:justify;
+    text-align-last:center;
+    border-radius:5px;
+    z-index:9999999;
+}
+
+#sidebar h1 {
+    -webkit-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+}
+
+#sidebar h1:hover {
+    color:{color:links hover};
+    -webkit-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+}
+
+#nav {
+    text-align:center;
+    border:1px solid {color:borders};
+    background-color:{color:background};
+    background-image:url('{image:background}');
+    background-repeat:repeat;
+    padding:5px;
+    padding-top:9px;
+    margin-top:15px;
+}
+
+#nav a {
+    display:inline;
+    font-size:15px;
+    margin-left:7px;
+    margin-right:7px;
+    font-family:'cinzel decorative';
+    color:{color:accent text};
+    text-shadow:0 0 3px {color:borders};
+    -webkit-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+}
+
+#nav a:hover {
+    color:{color:links hover};
+    -webkit-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+}
+
+.pagination {
+    font-family:'cinzel decorative';
+    text-align:center;
+    position:relative;
+    margin-top:10px;
+}
+
+.pagination a {
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.pagination a.current {
+    color:{color:bold};
+    text-shadow:none;
+}
+
+#postholder {
+    position:absolute;
+    width:570px;
+    height:100%;
+    margin-top:-10px;
+    margin-left:370px;
+    padding-left:10px;
+    overflow-y:scroll;
+}
+
+.posts {
+    margin-bottom:40px;
+    width:500px;
+    text-align:justify;
+    border:1px solid {color:borders};
+    padding:20px;
+    box-shadow:0 0 5px {color:borders};
+    background-color:{color:posts};
+    border-radius:5px;
+}
+
+ul {
+    list-style-type:circle;
+    margin-left:-10px;
+}
+
+.posts:first-of-type {
+    margin-top:20px;
+}
+
+.posts:last-of-type {
+    margin-bottom:20px;
+}
+
+blockquote img {
+    max-width:100%;
+    height:auto;
+}
+
+blockquote:empty {
+    display:none;
+}
+
+h1 {
+    font-family:'cinzel decorative';
+    letter-spacing:1px;
+    text-align:center;
+    border:1px solid {color:borders};
+    background-color:{color:background};
+    background-image:url('{image:background}');
+    background-repeat:repeat;
+    color:{color:accent text};
+    padding:10px;
+    text-shadow:0 0 3px {color:borders};
+    margin-top:0;
+    padding-top:12px;
+    font-size:20px;
+}
+
+h2 {
+    font-family:'cinzel decorative';
+    text-align:center;
+    font-size:15px;
+    color:{color:bold};
+}
+
+.poster {
+    font-family: 'Cinzel Decorative', cursive;
+    letter-spacing:0.5px;
+    color:{color:links};
+    text-shadow:0 0 3px {color:links};
+}
+
+.postercontent {
+    border-bottom:1px solid {color:borders};
+    margin-bottom:15px;
+}
+
+.deactiv {
+    color:{color:borders};
+    text-shadow:none;
+}
+
+.posts h5 {
+    font-size:1em;
+    font-weight:normal;
+    padding:0;
+    margin:0;
+}
+
+.posts h5:first-of-type .poster {
+    padding-top:10px;
+}
+
+.posts h5:last-of-type .poster.{text:your url} {
+    display:none;
+}
+
+.posts h5:last-of-type .postercontent {
+    border:none;
+}
+
+.poster img {
+    float:left;
+    width:20px;
+    margin-right:5px;
+    margin-top:-2px;
+    border-radius:2px;
+}
+
+.npf_row {
+    margin:0 !important;
+}
+
+.npf_chat {
+    font-family:'muli' !important;
+}
+
+.npf_quote {
+    font-family:'charmonman' !important;
+    font-size:1.3em;
+    letter-spacing:1.5px;
+    color:{color:italic};
+}
+
+blockquote {
+    border-left:1px solid {color:borders};
+    margin-left:5px;
+    padding-left:10px;
+    margin-right:0;
+}
+
+blockquote blockquote {
+    margin-left:0;
+}
+
+.postercontent blockquote {
+    margin-left:0;
+}
+
+.posts h5:last-of-type .postercontent.{text:your url} blockquote {
+    margin-left:5px;
+}
+
+.quote {
+    border:1px solid {color:borders};
+   background-color:{color:background};
+    background-image:url('{image:background}');
+    background-repeat:repeat;
+    padding:10px;
+    color:{color:accent text};
+    text-align:center;
+    text-shadow:0 0 3px {color:borders};
+    line-height:18px;
+}
+
+.source {
+    font-family:'cinzel decorative';
+    text-align:center;
+    padding:10px;
+}
+
+.ask {
+    border:1px solid {color:borders};
+    background-color:{color:background};
+    background-image:url('{image:background}');
+    background-repeat:repeat;
+    padding:10px;
+    color:{color:accent text};
+    text-align:justify;
+    text-align-last:center;
+    text-shadow:0 0 3px {color:borders};
+    line-height:18px;
+}
+
+.audioplayer {
+    border:1px solid {color:borders};
+    background-color:{color:background};
+    background-image:url('{image:background}');
+    background-repeat:repeat;
+    padding:10px;
+    color:{color:accent text};
+    text-shadow:0 0 3px {color:borders};
+    line-height:18px;
+    overflow:auto;
+}
+
+.audioplayer img {
+    float:left;
+    margin-right:10px;
+}
+
+.audioplayer b {
+    color:{color:accent text};
+}
+
+.playbutton {
+    width:28px;
+    height:28px;
+    object-position:30% 0;
+    overflow:hidden;
+    border-radius:100%;
+    position:absolute;
+    opacity:0.8;
+    margin-top:6px;
+    margin-left:7px;
+}
+
+pre {
+    border:1px solid {color:borders};
+    font-family:'sulphur point';
+    background-color:{color:background};
+    background-image:url('{image:background}');
+    background-repeat:repeat;
+    padding:10px;
+    color:{color:accent text};
+    text-align:center;
+    text-shadow:0 0 3px {color:borders};
+    line-height:18px;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
+pre a {
+    color:{color:accent text};
+}
+
+.permalinks {
+    border:1px solid {color:borders};
+    background-color:{color:background};
+    background-image:url('{image:background}');
+    background-repeat:repeat;
+    padding:10px;
+    color:{color:accent text};
+    text-align:center;
+    text-shadow:0 0 3px {color:borders};
+    line-height:18px;
+}
+
+.permalinks a {
+    color:{color:accent text};
+    -webkit-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+}
+
+.permalinks a:hover {
+    color:{color:links hover};
+    -webkit-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+}
+
+.permalinks i:hover {
+    color:{color:links hover};
+    -webkit-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+}
+
+.tags {
+    line-height:16px;
+    font-size:1em;
+    font-family:'la-belle-aurore';
+}
+
+.postinfo {
+    font-family:'cinzel decorative';
+    font-size:0.9em
+}
+
+.postinfo a {
+    padding-left:10px;
+    padding-right:10px;
+}
+
+/* DO NOT EDIT OR REMOVE */
+.credit {
+    position:fixed;
+    bottom:5px;
+    right:5px;
+}
+
+/* DO NOT EDIT OR REMOVE */
+.credit a {
+    color:{color:accent text};
+    display:block;
+    border-radius:5px;
+    text-align:center;
+    text-transform:uppercase;
+    line-height:14px;
+    font-size:0.9em;
+    margin:5px;
+}
+
+/* DO NOT EDIT OR REMOVE */
+.credit b {
+    font-size:1.2em;
+    text-transform:none;
+    color:{color:accent text};
+}
+
+.notes {
+    line-height:19px;
+    text-align:justify;
+}
+
+.notes li {
+    padding-bottom:10px;
+    list-style-type:none;
+    margin-left:-40px;
+    padding-right:40px;
+}
+
+.notes li:before {
+    content:none;
+}
+
+.notes img {
+    float:left;
+    width:15px;
+    border-radius:5px;
+    margin-right:4px;
+    padding:2px;
+}
+
+.listitem {
+    display:inline-block;
+    vertical-align:top;
+    width:100%;
+    margin-bottom:40px;
+}
+
+.listitem:last-of-type {
+    margin-bottom:0;
+}
+
+.listitem img {
+    width:125px;
+    height:125px;
+    object-fit:cover;
+    border-radius:5px;
+    border:1px solid {color:borders}; /* change line color */
+    margin-bottom:5px;
+}
+
+.listitem:nth-of-type(odd) img {
+    float:left;
+    margin-right:10px;
+}
+
+.listitem:nth-of-type(even) img {
+    float:right;
+    margin-left:10px;
+}
+
+.listitem .title {
+    font-size:1.5em;
+    letter-spacing:1px;
+    margin-top:30px;
+    font-weight:bold;
+    border-bottom:1px solid {color:borders}; /* change line color */
+	padding-top:10px;
+	padding-bottom:5px;
+    margin-bottom:10px;
+    font-family:'cinzel decorative';
+}
+
+.listitem:nth-of-type(odd) .title {
+    text-align:right;
+    margin-left:10px;
+}
+
+.listitem:nth-of-type(even) .title {
+    text-align:left;
+    margin-right:10px;
+}
+
+.listitem .subtitle {
+    font-size:1.2em;
+    text-transform:uppercase;
+    font-weight:normal;
+    letter-spacing:2px;
+    margin-top:-5px;
+}
+
+.listitem:nth-of-type(odd) .subtitle {
+    text-align:right;
+}
+
+.listitem:nth-of-type(even) .subtitle {
+    text-align:left;
+}
+
+.listitem .blurb {
+    margin-top:15px;
+}
+
+/* TIMELINE CODE - by RPSchtuff */
+
+/* INDIVIDUAL ENTRY */
+.tl {
+    width:100%;
+    height:auto;
+    display:flex;
+}
+
+/* DATE */
+.tl .date {
+    width:25%;
+    height:100%;
+    text-align:right;
+    margin-right:10px;
+    /* styling for the date label below - add/remove/alter to suit your needs */
+	font-family: 'Cinzel Decorative', cursive;
+    letter-spacing:0.5px;
+    color:{color:bold};
+}
+
+/* CONTENT */
+.tl .content {
+    width:calc(75% - 20px);
+    padding-left:10px;
+    border-left:1px solid {color:borders}; /* color of line */
+    padding-bottom:20px; /* size of gap between entries */
+}
+
+/* DOT ON LINE */
+.tl .content:before {
+    content:"";
+    position:absolute;
+    margin-left:-14px;
+    border-radius:100%;
+    width:5px;
+    height:5px;
+    margin-top:4px; /* adjust as needed to align vertically on line */
+    background-color: {color:posts}; /* color of dot */
+    border:1px solid {color:borders}; /* color of dot outline */
+}
+
+/* this removes the gap from under your final entry */
+.tl:last-of-type .content {
+    padding-bottom:0;
+}
+
+.statholder {
+    margin-bottom:20px;
+}
+
+.stat {
+    width:100%;
+    height:11px;
+    border-bottom:1px dotted {color:borders};
+    margin-bottom:7px;
+}
+
+.stat .left {
+    font-family:'cinzel decorative';
+    float:left;
+    background:{color:posts};
+    padding-right:2px;
+    color:{color:bold};
+}
+
+.stat .right {
+    float:right;
+    background:{color:posts};
+    padding-left:3px;
+}
+
+.iconrow {
+    width:100%;
+    text-align:center;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.iconrow img {
+    width:100px;
+    height:100px;
+    border-radius:5px;
+    display:inline-block;
+    margin-left:10px;
+    margin-right:10px;
+}
+
+{CustomCSS}
+
+</style>
+<body>
+
+<div id="container">
+
+<!-- SIDEBAR/HEADER -->
+<div id="sb">
+    
+        <img src="{image:side pic}" class="sidepic">
+
+    <div id="sidebar">
+        
+        {block:ifSidebarTitle}
+            <a href="/"><h1>{text:sidebar title}</h1></a>
+        {/block:ifSidebarTitle}
+    
+        {text:Description}
+        
+        <div id="nav">
+            <a href="/" title="{text:home title}">{text:nav link symbol}</a>
+            <a href="/ask" title="{text:ask title}">{text:nav link symbol}</a>
+            
+            {block:IfShowSubmit}
+            <a href="/submit" title="{text:submit title}">{text:nav link symbol}</a>
+            {/block:IfShowSubmit}
+            
+            {block:HasPages}
+            {block:Pages}
+            <a href="{URL}" title="{Label}">{text:nav link symbol}</a>
+            {/block:Pages}
+            {/block:HasPages}
+            
+            {block:IfShowArchive}
+            <a href="/archive" title="{text:archive title}">{text:nav link symbol}</a>
+            {/block:IfShowArchive}
+            
+        </div>
+        
+    </div>
+    
+    <div class="pagination">
+    
+    {block:Pagination}
+    {block:PreviousPage}<a href="{PreviousPage}">&laquo;</a>{/block:PreviousPage}
+    {block:JumpPagination length="5"}
+    {block:CurrentPage}<a class="current">{PageNumber}</a>{/block:CurrentPage}
+    {block:JumpPage}<a href="{URL}">{PageNumber}</a>{/block:JumpPage}{/block:JumpPagination}
+    {block:NextPage}<a href="{NextPage}">&raquo;</a>{/block:NextPage}
+    {/block:Pagination}
+    
+    </div>
+</div>
+
+<!-- POSTS -->
+<div id="postholder">
+{block:Posts}
+
+{block:ContentSource}
+<!-- {SourceURL}{block:SourceLogo}<img src="{BlackLogoURL}"
+width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+{/block:SourceLogo}
+{block:NoSourceLogo}{SourceLink}{/block:NoSourceLogo} -->
+{/block:ContentSource}
+
+<div class="posts">
+
+<!-- TEXT POSTS -->
+{block:Text}
+ 
+    <!-- POST TITLE -->
+	{block:Title}
+        <h1>{Title}</h1>
+    {/block:Title}
+ 
+    <!-- ORIGINAL POSTS -->
+	{block:NotReblog}
+        {Body}
+        
+        {block:More}
+    		    <div class="readmore">
+    			    <a href="{Permalink}">read more</a>
+    			</div>
+    		{/block:More}
+    {/block:NotReblog}
+ 
+	<!-- REBLOGGED POSTS -->
+    {block:RebloggedFrom}
+        {block:Reblogs}
+ 
+			<!-- REBLOG USER AVATAR (ACTIVE) -->
+			<h5>
+    			<div class="poster {Username}">
+                    {block:IsActive}
+                        <img src="{PortraitURL-64}">
+                    {/block:IsActive}
+         
+        			<!-- REBLOG USER AVATAR (DEACTIVATED) -->
+                    {block:IsDeactivated}
+                        <img src="https://64.media.tumblr.com/0a049264fba0072a818f733a6c533578/tumblr_mqvlz4t5FK1qcnibxo1_540.png">
+                    {/block:IsDeactivated}
+         
+        			<!-- REBLOG USER URL -->
+                    {block:HasPermalink}<a href="{Permalink}" target="_blank">{/block:HasPermalink}
+                        {block:isDeactivated}<div class="deactiv">{/block:isDeactivated}
+                        {Username}
+                        {block:isDeactivated}</div>{/block:isDeactivated}
+                    {block:HasPermalink}</a>{/block:HasPermalink}
+                </div>
+     
+    			<!-- REBLOG CONTENT -->
+    			<div class="postercontent {Username}">{Body}</div>
+    			
+    			{block:More}
+    			    <div class="readmore">
+    			        <a href="{Permalink}">read more</a>
+    			    </div>
+    			{/block:More}
+    			
+			</h5>
+ 
+        {/block:Reblogs}
+    {/block:RebloggedFrom}
+ 
+{/block:Text}
+ 
+ 
+ 
+<!-- PHOTO POSTS -->
+{block:Photo}
+ 
+	<!-- PHOTO -->
+    <img class="photo" src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+ 
+	<!-- PHOTO CAPTION -->
+    {block:Caption}
+ 
+		<!-- ORIGINAL POSTS -->
+        {block:NotReblog}
+            {Caption}
+            
+            {block:More}
+    		    <div class="readmore">
+    			    <a href="{Permalink}">read more</a>
+    			</div>
+    		{/block:More}
+            
+        {/block:NotReblog}
+ 
+		<!-- REBLOGGED POSTS -- >
+        {block:RebloggedFrom}
+            {block:Reblogs}
+ 
+				<!-- REBLOG USER AVATAR (ACTIVE) -->
+				<h5>
+    				<div class="poster {Username}">
+                        {block:IsActive}
+        	                <img src="{PortraitURL-64}">
+                        {/block:IsActive}
+         
+        				<!-- REBLOG USER AVATAR (DEACTIVATED) -->
+                        {block:IsDeactivated}
+                            <img src="https://64.media.tumblr.com/0a049264fba0072a818f733a6c533578/tumblr_mqvlz4t5FK1qcnibxo1_540.png">
+                        {/block:IsDeactivated}
+         
+        				<!-- REBLOG USER URL -->
+                        {block:HasPermalink}<a href="{Permalink}" target="_blank">{/block:HasPermalink}
+                           	{block:isDeactivated}<div class="deactiv">{/block:isDeactivated}
+                            {Username}
+                            {block:isDeactivated}</div>{/block:isDeactivated}
+                        {block:HasPermalink}</a>{/block:HasPermalink}
+                    </div>
+     
+    				<!-- REBLOG CONTENT -->
+    				<div class="postercontent {Username}">{Body}</div>
+				</h5>
+				
+				{block:More}
+    			    <div class="readmore">
+    			        <a href="{Permalink}">read more</a>
+    			    </div>
+    			{/block:More}
+ 
+            {/block:Reblogs}
+        {/block:RebloggedFrom}
+ 
+    {/block:Caption}
+ 
+{/block:Photo}
+ 
+ 
+ 
+<!-- PHOTOSET POSTS -->
+{block:Photoset}
+ 
+	<!-- PHOTOSET -->
+    <div class="photo">{Photoset-500}</div>
+ 
+	<!-- PHOTO CAPTION -->
+    {block:Caption}
+ 
+		<!-- ORIGINAL POSTS -->
+        {block:NotReblog}
+            {Caption}
+            
+            {block:More}
+    		    <div class="readmore">
+    			    <a href="{Permalink}">read more</a>
+    			</div>
+    		{/block:More}
+            
+        {/block:NotReblog}
+ 
+		<!-- REBLOGGED POSTS -->
+        {block:RebloggedFrom}
+            {block:Reblogs}
+ 
+				<!-- REBLOG USER AVATAR (ACTIVE) -->
+				<h5>
+    				<div class="poster {Username}">
+                        {block:IsActive}
+        	                <img src="{PortraitURL-64}">
+                        {/block:IsActive}
+         
+        				<!-- REBLOG USER AVATAR (DEACTIVATED) -->
+                        {block:IsDeactivated}
+                            <img src="https://64.media.tumblr.com/0a049264fba0072a818f733a6c533578/tumblr_mqvlz4t5FK1qcnibxo1_540.png">
+                        {/block:IsDeactivated}
+         
+        				<!-- REBLOG USER URL -->
+                        {block:HasPermalink}<a href="{Permalink}" target="_blank">{/block:HasPermalink}
+                         	{block:isDeactivated}<div class="deactiv">{/block:isDeactivated}
+                            {Username}
+                            {block:isDeactivated}</div>{/block:isDeactivated}
+                        {block:HasPermalink}</a>{/block:HasPermalink}
+                    </div>
+     
+    				<!-- REBLOG CONTENT -->
+                  	<div class="postercontent {Username}">{Body}</div>
+              	</h5>
+              	
+              	{block:More}
+    			    <div class="readmore">
+    			        <a href="{Permalink}">read more</a>
+    			    </div>
+    			{/block:More}
+ 
+            {/block:Reblogs}
+        {/block:RebloggedFrom}
+ 
+    {/block:Caption}
+ 
+{/block:Photoset}
+ 
+ 
+ 
+<!-- PANORAMA POSTS -->
+{block:Panorama}
+ 
+	<!-- PANORAMA -->
+    {LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>{LinkCloseTag}
+ 
+	<!-- PANORAMA CAPTION -->
+    {block:Caption}
+ 
+		<!-- ORIGINAL POSTS -->
+        {block:NotReblog}
+            {Caption}
+            
+            {block:More}
+    		    <div class="readmore">
+    			    <a href="{Permalink}">read more</a>
+    			</div>
+    		{/block:More}
+            
+        {/block:NotReblog}
+ 
+		<!-- REBLOGGED POSTS -->
+        {block:RebloggedFrom}
+            {block:Reblogs}
+ 
+				<!-- REBLOG USER AVATAR (ACTIVE) -->
+				<h5>
+    				<div class="poster {Username}">
+                        {block:IsActive}
+        	                <img src="{PortraitURL-64}">
+                        {/block:IsActive}
+         
+        				<!-- REBLOG USER AVATAR (DEACTIVATED) -->
+                        {block:IsDeactivated}
+                            <img src="https://64.media.tumblr.com/0a049264fba0072a818f733a6c533578/tumblr_mqvlz4t5FK1qcnibxo1_540.png">
+                        {/block:IsDeactivated}
+         
+        				<!-- REBLOG USER URL -->
+                        {block:HasPermalink}<a href="{Permalink}" target="_blank">{/block:HasPermalink}
+                         	{block:isDeactivated}<div class="deactiv">{/block:isDeactivated}
+                            {Username}
+                            {block:isDeactivated}</div>{/block:isDeactivated}
+                        {block:HasPermalink}</a>{/block:HasPermalink}
+                    </div>
+     
+    				<!-- REBLOG CONTENT-->
+    	            <div class="postercontent {Username}">{Body}</div>
+	            </h5>
+	            
+	            {block:More}
+    			    <div class="readmore">
+    			        <a href="{Permalink}">read more</a>
+    			    </div>
+    			{/block:More}
+ 
+            {/block:Reblogs}
+        {/block:RebloggedFrom}
+ 
+    {/block:Caption}
+ 
+{/block:Panorama}
+ 
+ 
+ 
+<!-- ASK POSTS -->
+{block:Answer}
+            
+            
+        <div class="ask"><b>{Asker} said &mdash;</b><br>{Question}</div>
+ 
+		<!-- ORIGINAL POST ANSWER -->
+        {block:NotReblog}
+            {Answer}
+            
+            {block:More}
+    		    <div class="readmore">
+    			    <a href="{Permalink}">read more</a>
+    			</div>
+    		{/block:More}
+            
+        {/block:NotReblog}
+ 
+		<!-- REBLOGGED POSTS -->
+        {block:RebloggedFrom}
+ 
+			<!-- ORIGINAL ANSWER -->
+	        {block:Answerer}
+ 
+				<!-- ORIGINAL ANSWERER AVATAR -->
+				<h5>
+    				<div class="poster {Username}">
+                        <img src="{AnswererPortraitURL-64}">
+         
+        				<!-- ORIGINAL ANSWERER URL -->
+                        {block:HasPermalink}<a href="{Permalink}" target="_blank">{/block:HasPermalink}
+                         	{block:isDeactivated}<div class="deactiv">{/block:isDeactivated}
+                            {Answerer}
+                            {block:isDeactivated}</div>{/block:isDeactivated}
+                        {block:HasPermalink}</a>{/block:HasPermalink}
+                    </div>
+     
+    				<!-- ORIGINAL ANSWER -->
+    	            <div class="postercontent {Username}">{Answer}</div>
+	            </h5>
+	            
+	            {block:More}
+    			    <div class="readmore">
+    			        <a href="{Permalink}">read more</a>
+    			    </div>
+    			{/block:More}
+ 
+    	    {/block:Answerer}
+ 
+			<!-- REBLOG ADDITIONS -->
+            {block:Reblogs}
+ 
+				<!-- REBLOG USER AVATAR (ACTIVE) -->
+				<h5>
+    				<div class="poster {Username}">
+                        {block:IsActive}
+        		            <img src="{PortraitURL-64}">
+                        {/block:IsActive}
+         
+        				<!-- REBLOG USER AVATAR (DEACTIVATED) -->
+                        {block:IsDeactivated}
+                            <img src="https://64.media.tumblr.com/0a049264fba0072a818f733a6c533578/tumblr_mqvlz4t5FK1qcnibxo1_540.png">
+                        {/block:IsDeactivated}
+         
+        				<!-- REBLOG USER URL -->
+                        {block:HasPermalink}<a href="{Permalink}" target="_blank">{/block:HasPermalink}
+                          	{block:isDeactivated}<div class="deactiv">{/block:isDeactivated}
+                            {Username}
+                            {block:isDeactivated}</div>{/block:isDeactivated}
+                        {block:HasPermalink}</a>{/block:HasPermalink}
+                    </div>
+     
+    				<!-- REBLOG CONTENT -->
+                    <div class="postercontent {Username}">{Body}</div>
+                </h5>
+                
+                {block:More}
+    			    <div class="readmore">
+    			        <a href="{Permalink}">read more</a>
+    			    </div>
+    			{/block:More}
+ 
+            {/block:Reblogs}
+        {/block:RebloggedFrom}
+ 
+{/block:Answer}
+ 
+ 
+ 
+<!-- VIDEO POSTS -->
+{block:Video}
+ 
+	<!-- VIDEO -->
+	<div class="vid">
+        {Video-500}
+    </div>
+ 
+	<!-- VIDEO CAPTION -->
+    {block:Caption}
+ 
+		<!-- ORIGINAL POSTS -->
+        {block:NotReblog}
+            {Caption}
+            
+            {block:More}
+    		    <div class="readmore">
+    			    <a href="{Permalink}">read more</a>
+    			</div>
+    		{/block:More}
+    		
+        {/block:NotReblog}
+ 
+		<!-- REBLOGGED POSTS -->
+        {block:RebloggedFrom}
+            {block:Reblogs}
+ 
+				<!-- REBLOG USER AVATAR (ACTIVE) -->
+				<h5>
+    				<div class="poster {Username}">
+                        {block:IsActive}
+        	                <img src="{PortraitURL-64}">
+                        {/block:IsActive}
+         
+        				<!-- REBLOG USER AVATAR (INACTIVE) -->
+                        {block:IsDeactivated}
+                            <img src="https://64.media.tumblr.com/0a049264fba0072a818f733a6c533578/tumblr_mqvlz4t5FK1qcnibxo1_540.png">
+                        {/block:IsDeactivated}
+         
+        				<!-- REBLOG USER URL -->
+                        {block:HasPermalink}<a href="{Permalink}" target="_blank">{/block:HasPermalink}
+                          	{block:isDeactivated}<div class="deactiv">{/block:isDeactivated}
+                            {Username}
+                            {block:isDeactivated}</div>{/block:isDeactivated}
+                        {block:HasPermalink}</a>{/block:HasPermalink}
+                    </div>
+     
+    				<!-- REBLOG CONTENT -->
+    	            <div class="postercontent {Username}">{Body}</div>
+	            </h5>
+	            
+	            {block:More}
+    			    <div class="readmore">
+    			        <a href="{Permalink}">read more</a>
+    			    </div>
+    			{/block:More}
+ 
+            {/block:Reblogs}
+        {/block:RebloggedFrom}
+ 
+    {/block:Caption}
+ 
+{/block:Video}
+ 
+ 
+ 
+<!-- QUOTE POSTS -->
+{block:Quote}
+ 
+	<!-- QUOTE -->
+    <div class="quote">{Quote}</div>
+ 
+	<!-- QUOTE SOURCE -->
+    {block:Source}<div class="source">{Source}</div>{/block:Source}
+ 
+{/block:Quote}
+ 
+ 
+ 
+<!-- LINK POSTS -->
+{block:Link}
+ 
+	<!-- LINK -->
+    <h2><a href="{URL}" {Target}>{Name}</a></h2>
+ 
+	<!-- LINK CAPTION -->
+    {block:Description}
+ 
+		<!-- ORIGINAL POSTS -->
+        {block:NotReblog}
+            {Description}
+            
+            {block:More}
+    		    <div class="readmore">
+    			    <a href="{Permalink}">read more</a>
+    			</div>
+    		{/block:More}
+            
+        {/block:NotReblog}
+ 
+		<!-- REBLOGGED POSTS -->
+        {block:RebloggedFrom}
+            {block:Reblogs}
+ 
+				<!-- REBLOG USER AVATAR (ACTIVE) -->
+				<h5>
+    				<div class="poster {Username}">
+                        {block:IsActive}
+        	                <img src="{PortraitURL-64}">
+                        {/block:IsActive}
+         
+        				<!-- REBLOG USER AVATAR (DEACTIVATED) -->
+                    	{block:IsDeactivated}
+                            <img src="https://64.media.tumblr.com/0a049264fba0072a818f733a6c533578/tumblr_mqvlz4t5FK1qcnibxo1_540.png">
+                        {/block:IsDeactivated}
+         
+        				<!-- REBLOG USER URL -->
+                        {block:HasPermalink}<a href="{Permalink}" target="_blank">{/block:HasPermalink}
+                          	{block:isDeactivated}<div class="deactiv">{/block:isDeactivated}
+                            {Username}
+                            {block:isDeactivated}</div>{/block:isDeactivated}
+                        {block:HasPermalink}</a>{/block:HasPermalink}
+                    </div>
+     
+    				<!-- REBLOG CONTENT -->
+    	            <div class="postercontent {Username}">{Body}</div>
+	            </h5>
+	            
+	            {block:More}
+    			    <div class="readmore">
+    			        <a href="{Permalink}">read more</a>
+    			    </div>
+    			{/block:More}
+ 
+            {/block:Reblogs}
+        {/block:RebloggedFrom}
+ 
+    {/block:Description}
+ 
+{/block:Link}
+ 
+ 
+ 
+<!-- CHAT POSTS -->
+{block:Chat}
+ 
+	<!-- CHAT TITLE -->
+    {block:Title}<h1>{Title}</h1>{/block:Title}
+ 
+	<!-- CHAT -->
+    {block:Lines}
+ 
+		<!-- CHAT LABEL -->
+	    <p>{block:Label}<b>{Label}</b>{/block:Label}
+ 
+		<!-- CHAT LINE -->
+	    {Line}</p>
+ 
+    {/block:Lines}
+ 
+{/block:Chat}
+ 
+ 
+ 
+<!-- AUDIO POSTS -->
+{block:Audio}
+ 
+	<div class="audioplayer">
+    <div class="playbutton">{AudioPlayerWhite}</div>
+    {block:AlbumArt}<img src="{AlbumArtURL}" width="40">{/block:AlbumArt}
+    {block:TrackName}<b>{TrackName}</b>{/block:TrackName}<br>
+    {block:Artist} {Artist}{/block:Artist}
+    </div>
+ 
+		<!-- ORIGINAL POSTS -->
+    	{block:NotReblog}
+	        {Body}
+	        
+	        {block:More}
+    		    <div class="readmore">
+    			    <a href="{Permalink}">read more</a>
+    			</div>
+    		{/block:More}
+	        
+	    {/block:NotReblog}
+ 
+		<!-- REBLOGGED POSTS -->
+        {block:RebloggedFrom}
+            {block:Reblogs}
+ 
+				<!-- REBLOG USER AVATAR (ACTIVE) -->
+				<h5>
+    				<div class="poster {Username}">
+                        {block:IsActive}
+        	                <img src="{PortraitURL-64}">
+                        {/block:IsActive}
+         
+        				<!-- REBLOG USER AVATAR (DEACTIVATED) -->
+                        {block:IsDeactivated}
+                            <img src="https://64.media.tumblr.com/0a049264fba0072a818f733a6c533578/tumblr_mqvlz4t5FK1qcnibxo1_540.png">
+                        {/block:IsDeactivated}
+         
+        				<!-- REBLOG USER URL -->
+                        {block:HasPermalink}<a href="{Permalink}" target="_blank">{/block:HasPermalink}
+                           	{block:isDeactivated}<div class="deactiv">{/block:isDeactivated}
+                        {Username}
+                        {block:isDeactivated}</div>{/block:isDeactivated}
+                        {block:HasPermalink}</a>{/block:HasPermalink}
+                    </div>
+     
+    				<!-- REBLOG CONTENT -->
+                   	<div class="postercontent {Username}">{Body}</div>
+               	</h5>
+               	
+               	{block:More}
+    			    <div class="readmore">
+    			        <a href="{Permalink}">read more</a>
+    			    </div>
+    			{/block:More}
+ 
+            {/block:Reblogs}
+        {/block:RebloggedFrom}
+ 
+    {/block:Caption}
+ 
+{/block:Audio}
+
+<!-- POST INFO -->
+{block:Date}
+<div class="permalinks">
+<div class="postinfo">
+    <a href="{Permalink}"> {MonthNumberWithZero}.{DayOfMonthWithZero}.{Year} </a>&nbsp;
+ 
+    {block:NoteCount}<a href="{Permalink}"> {NoteCountWithLabel} </a>&nbsp;{/block:NoteCount}
+ 
+    {block:RebloggedFrom}
+ 
+        <a href="{ReblogParentURL}" title="{ReblogParentName}"> via </a> 
+ 
+        <a href="{ReblogRootURL}" title="{ReblogRootName}"> source </a>
+ 
+    {/block:RebloggedFrom}
+ 
+    <a href="{ReblogURL}"> reblog </a>
+ 
+</div>
+ 
+    {block:HasTags}
+        <div class="tags">
+        {block:Tags}<a href="{TagURL}">#{Tag}</a>&nbsp;&nbsp;{/block:Tags}
+        </div>
+    {/block:HasTags}
+</div>    
+ 
+{/block:Date}
+ 
+ 
+</div>
+ 
+{block:PermalinkPage}
+    {block:PostNotes}
+    <div class="notes">
+    {PostNotes}
+    </div>
+    {/block:PostNotes}
+{/block:PermalinkPage}
+
+{/block:Posts}
+
+</div>
+
+</div>
+
+<!-- DO NOT EDIT OR REMOVE -->
+<div class="credit">
+    <a href="http://rpschtuff.tumblr.com">theme by<br><b>RPSchtuff</b></a>
+</div>
+        
+</body>
+</html>
+<!-- THEME SKELETON PROVIDED BY EVANSYHELP. -->
