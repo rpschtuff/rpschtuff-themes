@@ -1,0 +1,620 @@
+<!--
+
+Hello, and thanks for using this theme! I've worked hard on it and I hope you find it useful.
+
+YOU MAY:
+- edit this code however you wish for personal use
+- contact me with any issues you find
+
+YOU MAY NOT:
+- remove or alter the credit in any way
+- use this code for any commissioned work
+
+~Jeanette (rpschtuff)
+
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>{Title}</title>
+<link rel="shortcut icon" href="{Favicon}">
+
+
+<style type="text/css">
+
+body {
+    background:#F6F6F6;
+    color:#000;
+    font-family:'Arial';
+    font-size:0.9em;
+    line-height:140%;
+}
+
+a, sup {
+    color:#0645ad;
+    text-decoration:none;
+}
+
+a.missing {
+    color:#BA0000;
+}
+
+a:hover, sup:hover {
+    text-decoration:underline;
+}
+
+sup {
+    vertical-align:baseline;
+    position:relative;
+    top:-0.5em;
+    font-size:0.75em;
+}
+
+h1, h2 {
+    font-family:'Georgia';
+    font-weight:normal;
+    padding-bottom:8px;
+    border-bottom:1px solid #A2A9B1;
+}
+
+h1 {
+    font-size:2em;
+    margin-top:0;
+}
+
+h2 {
+    font-size:1.4em;
+    margin-top:25px;
+}
+
+h3 {
+    font-size:1.1em;
+    margin-bottom:-5px;
+}
+
+h4 {
+    text-align:center;
+    font-size:1em;
+    margin-bottom:10px;
+    margin-top:0;
+}
+
+h5 {
+    text-align:center;
+    font-size:0.9em;
+    margin:5px 0 0 0;
+}
+
+h5 label {
+    font-weight:normal;
+    color:#0645ad;
+}
+
+h5 label:hover {
+    text-decoration:underline;
+}
+
+#container {
+    width:75%;
+    min-width:500px;
+    max-width:1400px;
+    margin:50px auto;
+    padding:20px;
+    border:1px solid #A7D7F9;
+    background:#fff;
+    overflow:hidden;
+}
+
+.from {
+    font-size:0.9em;
+    margin-top:-15px;
+    margin-bottom:15px;
+}
+
+#infobox {
+    float:right;
+    width:250px;
+    background:#F8F9FA;
+    border:1px solid #A2A9B1;
+    padding:10px 7px;
+    text-align:center;
+    margin-left:15px;
+}
+
+#infobox img {
+    width:230px;
+    height:auto;
+    max-height:310px;
+    object-fit:cover;
+}
+
+.picsub {
+    font-size:0.9em;
+}
+
+.stat {
+    font-size:0.9em;
+    margin-top:3px;
+    display:flex;
+}
+
+.stat strong {
+    width:95px;
+    font-weight:bold;
+    text-align:left;
+}
+
+.stat span {
+    text-align:left;
+}
+
+#contents {
+    width:300px;
+    background:#F8F9FA;
+    border:1px solid #A2A9B1;
+    padding:5px;
+}
+
+input[type=checkbox] {
+    position:fixed;
+    top:-9999px;
+    left:-9999px;
+}
+
+label {
+    -webkit-appearance: push-button;
+    -moz-appearance: button; 
+    display: inline-block;
+    margin:0;
+    cursor: pointer;
+}
+
+#navlist {
+    display:inline;
+}
+
+input[type=checkbox]:checked ~ #navlist {
+    display:none;
+}
+
+#contents ol {
+    counter-reset:item1;
+}
+
+#contents ol li {
+    display:block;
+    font-size:0.9em;
+    margin:3px 0 0 -30px;
+}
+
+#contents ol li:before {
+    content:counter(item1) " ";
+    counter-increment:item1;
+    color:#000;
+}
+
+#contents ol ol {
+    counter-reset:item2;
+}
+
+#contents ol ol li {
+    margin-left:-50px;
+}
+
+#contents ol ol li:before {
+    content:counter(item1)"."counter(item2) " ";
+    counter-increment:item2;
+}
+
+.main {
+    font-style:italic;
+    margin: 10px 0 0 25px;
+}
+
+.disclaimer {
+    width:60%;
+    margin:auto;
+    background:#F8F9FA;
+    border:1px solid #A2A9B1;
+    padding:7px;
+    margin-top:15px;
+    font-size:0.9em;
+    text-align:center;
+}
+
+.disclaimer strong {
+    font-size:1.1em;
+}
+
+.pic {
+    background:#F8F9FA;
+    border:1px solid #A2A9B1;
+    width:220px;
+    padding:5px;
+}
+
+.pic.right {
+    float:right;
+    margin-left:15px;
+}
+
+.pic.left {
+    float:left;
+    margin-right:15px;
+}
+
+.pic img {
+    width:220px;
+    height:auto;
+}
+
+.quote {
+    background:#F8F9FA;
+    border:1px solid #A2A9B1;
+    width:350px;
+    padding:10px;
+    font-size:0.9em;
+}
+
+.quote.right {
+    float:right;
+    margin-left:15px;
+}
+
+.quote.left {
+    float:left;
+    margin-right:15px;
+}
+
+.quote .source {
+    text-align:right;
+    margin-top:10px;
+}
+
+ol.disclaimers {
+    font-size:0.9em;
+}
+
+ol.disclaimers li {
+    margin-top:5px;
+}
+
+ol.ref {
+    font-size:0.9em;
+    -moz-column-count: 3;
+    -mox-column-gap: 15px;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 15px;
+    column-count:3;
+    column-gap:20px;
+}
+
+ol.ref li {
+    break-inside:avoid;
+}
+
+:target {
+    animation-name:highlight;
+    animation-duration:5s;
+}
+
+@keyframes highlight {
+    from {background-color:#EAF3FF;}
+    to {background-color:transparent;}
+}
+
+/* DO NOT REMOVE OR EDIT */
+#credit {
+    position:fixed;
+    right:10px;
+    bottom:10px;
+    background:#fff;
+    border:1px solid #A7D7F9;
+    text-align:center;
+    padding:5px;
+    font-size:0.8em;
+    line-height:110%;
+    text-transform:uppercase;
+}
+
+
+</style>
+</head>
+<body>
+
+
+<div id="container">
+
+
+    <!-- MAIN PAGE TITLE -->
+    <h1>Main Title</h1>
+    <div class="from">From Wikipedia, the free encyclopedia</div>
+    
+    
+    <!-- START OF INFOBOX -->
+    <div id="infobox">
+        
+        <!-- INFOBOX TITLE -->
+        <h4>Title</h4>
+        
+        <!-- INFOBOX IMAGE LINK -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Placeholder_Person.jpg">
+        
+        <!-- INFOBOX IMAGE SUBTITLE -->
+        <div class="picsub">image subtitle here</div>
+        
+        <!--START OF INFOBOX STATS -->
+        
+            <!--INFOBOX STAT -->
+            <div class="stat">
+                <strong>Born</strong>
+                <span>00 Month 0000 (age 00)<br>City, State</span>
+            </div>
+            
+            <!--INFOBOX STAT -->
+            <div class="stat">
+                <strong>Occupation</strong>
+                <span>Occupation</span>
+            </div>
+            
+            <!--INFOBOX STAT -->
+            <div class="stat">
+                <strong>Years active</strong>
+                <span>0000&ndash;present</span>
+            </div>
+            <!--INFOBOX STAT -->
+            <div class="stat">
+                <strong>More</strong>
+                <span>More</span>
+            </div>
+            
+            <!--INFOBOX STAT -->
+            <div class="stat">
+                <strong>More</strong>
+                <span>More</span>
+            </div>
+            
+            <!--INFOBOX STAT -->
+            <div class="stat">
+                <strong>More</strong>
+                <span>More</span>
+            </div>
+            
+            <!--INFOBOX STAT -->
+            <div class="stat">
+                <strong>More</strong>
+                <span>More</span>
+            </div>
+            
+            <!--INFOBOX STAT -->
+            <div class="stat">
+                <strong>More</strong>
+                <span>More</span>
+            </div>
+            
+            <!-- COPY PASTE MORE AS NEEDED -->
+            
+        <!-- END OF INFOBOX STATS -->
+        
+    </div>
+    <!-- END OF INFOBOX -->
+    
+    
+    <!-- START OF MAIN TEXT -->
+    <p>This is your <strong>main text</strong>. You can have <em>italics</em>, <a>links</a>, and stylized <a class="missing">missing links</a>. You can also have superscripts for sourcing, like this.<sup><a href="#refsection">[1]</a></sup></p>
+    
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper. Imperdiet massa tincidunt nunc pulvinar sapien. Ut etiam sit amet nisl purus in. Tempor orci eu lobortis elementum nibh tellus molestie. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat. Sit amet luctus venenatis lectus magna fringilla urna porttitor rhoncus. Feugiat in ante metus dictum at tempor commodo. Volutpat lacus laoreet non curabitur gravida arcu ac. Convallis posuere morbi leo urna molestie at. Et malesuada fames ac turpis. Convallis tellus id interdum velit laoreet. Risus at ultrices mi tempus.</p>
+
+    <p>Amet massa vitae tortor condimentum lacinia. In ante metus dictum at tempor commodo ullamcorper. Non curabitur gravida arcu ac tortor dignissim convallis aenean et. Mauris sit amet massa vitae tortor condimentum lacinia quis vel. Nibh nisl condimentum id venenatis. Massa sed elementum tempus egestas. Donec enim diam vulputate ut pharetra sit amet aliquam id. Nisl nunc mi ipsum faucibus vitae aliquet nec. Proin fermentum leo vel orci porta non pulvinar neque. Nullam eget felis eget nunc lobortis mattis aliquam faucibus purus. Sit amet purus gravida quis blandit. Eu volutpat odio facilisis mauris. Urna porttitor rhoncus dolor purus non enim praesent elementum. Id eu nisl nunc mi ipsum. Lacus sed viverra tellus in hac.</p>
+
+    <p>Volutpat odio facilisis mauris sit amet massa vitae tortor. Pulvinar etiam non quam lacus suspendisse faucibus interdum posuere. Velit sed ullamcorper morbi tincidunt ornare massa eget egestas. Est pellentesque elit ullamcorper dignissim cras tincidunt. Pulvinar neque laoreet suspendisse interdum consectetur libero. Odio eu feugiat pretium nibh ipsum consequat. Sit amet est placerat in egestas erat imperdiet. Urna molestie at elementum eu facilisis sed odio morbi. Malesuada fames ac turpis egestas sed tempus urna et pharetra. Purus gravida quis blandit turpis cursus in. Ultrices mi tempus imperdiet nulla. Facilisi etiam dignissim diam quis enim lobortis. Enim ut sem viverra aliquet eget. Volutpat diam ut venenatis tellus in metus vulputate eu scelerisque. Nulla at volutpat diam ut venenatis tellus in metus.</p>
+    
+    
+    <!-- START OF CONTENTS / NAVIGATION BOX -->
+    <div id="contents">
+    
+        <!-- CONTENTS TITLE (no need to edit) -->
+        <h5>Contents <label for="cbox">[hide]</label></h5>
+        <input type="checkbox" id="cbox">
+        
+        <!-- CONTENTS LIST -->
+        <!-- give each link its own id with no spaces and a # in front, as shown -->
+        <div id="navlist">
+        <ol>
+            <li><a href="#section1">Section one</a></li>
+            <li><a href="#section2">Section two</a></li>
+            <ol>
+                <li><a href="#subsection1">Subsection one</a></li>
+                <li><a href="#subsection2">Subsection two</a></li>
+            </ol>
+            <li><a href="#section3">Section three</a></li>
+            <li><a href="#notessection">Notes</a></li>
+            <li><a href="#refsection">References</a></li>
+            <li><a href="#externallinks">External Links</a></li>
+        </ol>
+        </div>
+    </div>
+    <!-- END OF CONTENTS / NAVIGATION BOX -->
+    
+    
+    <!-- SECTION TITLE -->
+    <!-- give each h2 or h3 the corresponding id from the CONTENTS section, without the # -->
+    <h2 id="section1">Section one</h2>
+    
+    
+    <!-- START OF IMAGE -->
+    <!-- change right / left based on where you want it placed -->
+    <div class="pic right">
+    
+        <!-- IMAGE LINK-->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png">
+        
+        <!-- IMAGE CAPTION -->
+        <div class="picsub">Picture caption goes here</div>
+    </div>
+    <!-- END OF IMAGE -->
+    
+    
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper. Imperdiet massa tincidunt nunc pulvinar sapien. Ut etiam sit amet nisl purus in. Tempor orci eu lobortis elementum nibh tellus molestie. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat. Sit amet luctus venenatis lectus magna fringilla urna porttitor rhoncus. Feugiat in ante metus dictum at tempor commodo. Volutpat lacus laoreet non curabitur gravida arcu ac. Convallis posuere morbi leo urna molestie at. Et malesuada fames ac turpis. Convallis tellus id interdum velit laoreet. Risus at ultrices mi tempus.</p>
+
+    <p>Amet massa vitae tortor condimentum lacinia. In ante metus dictum at tempor commodo ullamcorper. Non curabitur gravida arcu ac tortor dignissim convallis aenean et. Mauris sit amet massa vitae tortor condimentum lacinia quis vel. Nibh nisl condimentum id venenatis. Massa sed elementum tempus egestas. Donec enim diam vulputate ut pharetra sit amet aliquam id. Nisl nunc mi ipsum faucibus vitae aliquet nec. Proin fermentum leo vel orci porta non pulvinar neque. Nullam eget felis eget nunc lobortis mattis aliquam faucibus purus. Sit amet purus gravida quis blandit. Eu volutpat odio facilisis mauris. Urna porttitor rhoncus dolor purus non enim praesent elementum. Id eu nisl nunc mi ipsum. Lacus sed viverra tellus in hac.</p>
+    
+    
+    <!--SECTION TITLE -->
+    <h2 id="section2">Section two</h2>
+    
+    
+    <!-- SECION NOTE -->
+    <div class="disclaimer">
+        <strong>This section is lacking in detail.</strong><br>
+        Or any other disclaimer you like.
+    </div>
+    
+    
+    <!-- SUBSECTION TITLE -->
+    <h3 id="subsection1">Subsection one</h3>
+    
+    
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper. Imperdiet massa tincidunt nunc pulvinar sapien. Ut etiam sit amet nisl purus in. Tempor orci eu lobortis elementum nibh tellus molestie. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat. Sit amet luctus venenatis lectus magna fringilla urna porttitor rhoncus. Feugiat in ante metus dictum at tempor commodo. Volutpat lacus laoreet non curabitur gravida arcu ac. Convallis posuere morbi leo urna molestie at. Et malesuada fames ac turpis. Convallis tellus id interdum velit laoreet. Risus at ultrices mi tempus.</p>
+    
+    
+    <!-- LIST -->
+    <ul>
+        <li>List item one</li>
+        <li>List item two</li>
+        <li>List item three</li>
+    </ul>
+    
+    
+    <!-- SUBSECTION TITLE -->
+    <h3 id="subsection2">Subsection two</h3>
+    
+    
+    <p>Amet massa vitae tortor condimentum lacinia. In ante metus dictum at tempor commodo ullamcorper. Non curabitur gravida arcu ac tortor dignissim convallis aenean et. Mauris sit amet massa vitae tortor condimentum lacinia quis vel. Nibh nisl condimentum id venenatis. Massa sed elementum tempus egestas. Donec enim diam vulputate ut pharetra sit amet aliquam id. Nisl nunc mi ipsum faucibus vitae aliquet nec. Proin fermentum leo vel orci porta non pulvinar neque. Nullam eget felis eget nunc lobortis mattis aliquam faucibus purus. Sit amet purus gravida quis blandit. Eu volutpat odio facilisis mauris. Urna porttitor rhoncus dolor purus non enim praesent elementum. Id eu nisl nunc mi ipsum. Lacus sed viverra tellus in hac.</p>
+    
+    
+    <!-- SECTION TITLE -->
+    <h2 id="section3">Section three</h2>
+    
+    <!-- LINK TO OTHER ARTICLE -->
+    <div class="main">Main article: <a>Link to article</a></div>
+    
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper. Imperdiet massa tincidunt nunc pulvinar sapien. Ut etiam sit amet nisl purus in. Tempor orci eu lobortis elementum nibh tellus molestie. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat. Sit amet luctus venenatis lectus magna fringilla urna porttitor rhoncus. Feugiat in ante metus dictum at tempor commodo. Volutpat lacus laoreet non curabitur gravida arcu ac. Convallis posuere morbi leo urna molestie at. Et malesuada fames ac turpis. Convallis tellus id interdum velit laoreet. Risus at ultrices mi tempus.</p>
+    
+    
+    <!-- START OF QUOTE -->
+    <!-- change right /left based on where you want it placed -->
+    <div class="quote left">
+    
+        <!-- QUOTE -->
+        A quote goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in dolor nec orci euismod hendrerit malesuada sed tortor.
+        
+        <!-- QUOTE SOURCE -->
+        <div class="source"><em>Quote source</em></div>
+    </div>
+    <!-- END OF QUOTE -->
+
+<p>Amet massa vitae tortor condimentum lacinia. In ante metus dictum at tempor commodo ullamcorper. Non curabitur gravida arcu ac tortor dignissim convallis aenean et. Mauris sit amet massa vitae tortor condimentum lacinia quis vel. Nibh nisl condimentum id venenatis. Massa sed elementum tempus egestas. Donec enim diam vulputate ut pharetra sit amet aliquam id. Nisl nunc mi ipsum faucibus vitae aliquet nec. Proin fermentum leo vel orci porta non pulvinar neque. Nullam eget felis eget nunc lobortis mattis aliquam faucibus purus. Sit amet purus gravida quis blandit. Eu volutpat odio facilisis mauris. Urna porttitor rhoncus dolor purus non enim praesent elementum. Id eu nisl nunc mi ipsum. Lacus sed viverra tellus in hac.</p>
+    
+    
+    <!-- NOTES SECTION -->
+    <!-- delete if not wanted -->
+    <h2 id="notessection">Notes</h2>
+    
+    <!-- NOTES -->
+    <ol class="notes">
+        <li>Put any note you like here.</li>
+        <li>And another.</li>
+    </ol>
+    <!-- END OF NOTES SECTION -->
+    
+    
+    <!-- REFERENCES SECTION -->
+    <!-- delete if not wanted -->
+    <h2 id="refsection">References</h2>
+    
+    <!-- REFERENCES -->
+    <!-- items will sort into columns automatically -->
+    <ol class="ref">
+        <li><a>A reference here.</a> <em>Source.</em> Date. Anything else.</li>
+        <li><a>A reference here.</a> <em>Source.</em> Date. Anything else.</li>
+        <li><a>A reference here.</a> <em>Source.</em> Date. Anything else.</li>
+        <li><a>A reference here.</a> <em>Source.</em> Date. Anything else.</li>
+        <li><a>A reference here.</a> <em>Source.</em> Date. Anything else.</li>
+        <li><a>A reference here.</a> <em>Source.</em> Date. Anything else.</li>
+        <li><a>A reference here.</a> <em>Source.</em> Date. Anything else.</li>
+        <li><a>A reference here.</a> <em>Source.</em> Date. Anything else.</li>
+        <li><a>A reference here.</a> <em>Source.</em> Date. Anything else.</li>
+        <li><a>A reference here.</a> <em>Source.</em> Date. Anything else.</li>
+        <li><a>A reference here.</a> <em>Source.</em> Date. Anything else.</li>
+        <li><a>A reference here.</a> <em>Source.</em> Date. Anything else.</li>
+        <li><a>A reference here.</a> <em>Source.</em> Date. Anything else.</li>
+    </ol>
+    <!-- END OF REFERENCES -->
+    
+    
+    <!-- START OF EXTERNAL LINKS -->
+    <h2 id="externallinks">External Links</h2>
+    
+    <ul class="ext">
+        <li><a href="url">Link one</a></li>
+        <li><a href="url">Link two</a></li>
+        <li><a href="url">Link three</a></li>
+        <li><a href="url">Link four</a></li>
+        <li><a href="url">Link five</a></li>
+    </ul>
+    
+
+    
+<!-- ELEMENTS FOR COPY PASTING ARE BELOW -->
+
+
+<!-- LINK TO MAIN ARTICLE:
+
+<div class="main">Main article: <a>Link to article</a></div>
+
+-->
+
+
+<!-- NOTE / DISLAIMER:
+
+<div class="disclaimer"><strong>Big text here.</strong><br>Small text here.</div>
+
+-->
+
+
+<!-- IMAGE (CHANGE LEFT/RIGHT):
+
+<div class="pic right">
+    <img src="url">
+    <div class="picsub">caption</div>
+</div>
+
+-->
+
+
+<!-- QUOTE (CHANGE LEFT/RIGHT):
+
+<div class="quote left">
+    quote here
+    <div class="source">source here</div>
+</div>
+
+-->
+
+
+<!-- END OF CONTAINER (don't delete) -->
+</div>
+
+
+<!-- DO NOT REMOVE OR EDIT -->
+<div id="credit">
+    <a href="http://rpschtuff.tumblr.com"><small>theme by</small><br><strong>rpschtuff</strong></a>
+</div>
+
+
+</body>
+</html>
