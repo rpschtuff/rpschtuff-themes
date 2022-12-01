@@ -274,11 +274,11 @@ input[type=checkbox]:checked ~ #navlist {
     margin-top:10px;
 }
 
-ol.disclaimers {
+ol.notes {
     font-size:0.9em;
 }
 
-ol.disclaimers li {
+ol.notes li {
     margin-top:5px;
 }
 
