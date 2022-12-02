@@ -285,7 +285,7 @@ ol.notes li {
 ol.ref {
     font-size:0.9em;
     -moz-column-count: 3;
-    -mox-column-gap: 15px;
+    -moz-column-gap: 15px;
     -webkit-column-count: 3;
     -webkit-column-gap: 15px;
     column-count:3;
