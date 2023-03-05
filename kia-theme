@@ -422,6 +422,10 @@ h1 {
 	padding:20px 15px 15px 15px;
 }
 
+p + h1, h2 + h1, h1 + h1, h3 + h1 {
+    margin-top:15px;
+}
+
 h2 {
 	font-size:1.4em;
 	color:{color:accent text};
