@@ -482,9 +482,13 @@ h2 a {
 	text-decoration:none;
 }
 
-blockquote h2, .postercontent h2 {
+blockquote h2, .postercontent h2, blockquote h1, .postercontent h1 {
 	width:470px;
 	margin-left:0;
+}
+
+blockquote h1, .postercontent h1 {
+    width:445px;
 }
 
 ul {
