@@ -400,6 +400,10 @@ blockquote, .postercontent {
 	{/block:ifNotDarkTheme}
 }
 
+.postercontent img, .postercontent figure {
+    margin-bottom:15px !important;
+}
+
 blockquote blockquote, .postercontent blockquote {
     margin-left:-5px;
 }
