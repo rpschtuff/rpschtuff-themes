@@ -385,7 +385,7 @@ hr {
     height:auto;
 }
 
-div.npf_row figure.tmblr-full:only-child {
+.npf_row {
     object-fit:contain !important;
 }
 
@@ -394,7 +394,7 @@ p:first-of-type {
 }
 
 blockquote, .postercontent {
-	margin:0 0 0 10px;
+	margin:5px 0 5px 10px;
 	padding:0 0 0 15px;
 	{block:ifDarkTheme}
 	border-left:1px solid var(--dark-borders);
@@ -404,8 +404,8 @@ blockquote, .postercontent {
 	{/block:ifNotDarkTheme}
 }
 
-.postercontent img, .postercontent figure {
-    margin-bottom:15px !important;
+blockquote:empty {
+    display:none;
 }
 
 blockquote blockquote, .postercontent blockquote {
