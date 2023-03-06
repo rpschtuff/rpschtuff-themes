@@ -385,6 +385,10 @@ hr {
     height:auto;
 }
 
+div.npf_row figure.tmblr-full:only-child {
+    object-fit:contain !important;
+}
+
 p:first-of-type {
 	margin-top:10px;
 }
