@@ -367,6 +367,19 @@ hr {
 	{/block:ifNotDarkTheme}
 }
 
+.posts span {
+    {block:ifDarkTheme}
+    color:var(--dark-text) !important;
+    {/block:ifDarkTheme}
+    {block:ifNotDarkTheme}
+    color:var(--light-text) !important;
+    {/block:ifNotDarkTheme}
+}
+
+.posts span b, .posts span strong, .posts span bold, .posts b span, .posts strong span, .posts bold span, .posts h2 span, .posts span h2, .posts span h3, .posts h3 span {
+    color:{color:accent text} !important;
+}
+
 .posts img, blockquote img, .postercontent img {
     max-width:100%;
     height:auto;
@@ -904,12 +917,17 @@ div.npf-link-block.no-poster .title {
 
 .tagslist, .blogroll {
     vertical-align:top;
-    column-count:3;
+    column-count:2;
     margin-bottom:15px;
 }
 
 .tagslist ul, .blogroll ul {
     margin:0;
+}
+
+.tagslist ul ul {
+    margin-left:-15px;
+    font-style:italic;
 }
 
 .tagslist li, .blogroll li {
