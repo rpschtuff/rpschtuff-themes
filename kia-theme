@@ -439,7 +439,11 @@ h1 {
 	padding:20px 15px 15px 15px;
 }
 
-p + h1, h2 + h1, h1 + h1, h3 + h1 {
+.posts h1 span, .posts span h1 {
+    color:{color:accent background text} !important;
+}
+
+p + h1, h2 + h1, h1 + h1, h3 + h1, img + h1, figure + h1 {
     margin-top:15px;
 }
 
