@@ -232,7 +232,7 @@ hr {
 	left:0;
 	top:0;
 	height:100%;
-	padding:10% 20px;
+	padding:9% 20px;
 	overflow-y:scroll;
 	{block:ifDarkTheme}
 	background:var(--dark-highlight);
@@ -244,7 +244,7 @@ hr {
 
 #sidebar h1 {
 	background:none;
-	margin:0 -10px;
+	margin:-10px;
 }
 
 #sidebar h1 a {
@@ -252,10 +252,12 @@ hr {
 }
 
 #sidebar img.sb1 {
-	width:300px;
+	width:200px;
 	height:auto;
+	margin-left:50px;
 	max-height:300px;
 	object-fit:cover;
+	margin-bottom:-10px;
 	{block:ifCircleSidebarImage}
 	border-radius:50%;
 	{/block:ifCircleSidebarImage}
@@ -519,6 +521,11 @@ ul li:before {
     display:inline-block;
     width:1em;
     margin-left:-1em;
+}
+
+li p {
+    margin-top: -1.4em !important;
+    margin-bottom: 0em !important;
 }
 
 .npf_quote, .npf_quirky {
@@ -982,8 +989,6 @@ div.npf-link-block.no-poster .title {
 
 <div id="sidebar">
     
-	<h1><a href="/">{text:main title}</a></h1>
-    
     
     {block:ifNotTwoSidebarImages}
     	<img class="sb1" src="{image:sidebar 1}">
@@ -993,7 +998,9 @@ div.npf-link-block.no-poster .title {
         <img class="sb2" src="{image:sidebar 1}">
         <img class="sb2" src="{image:sidebar 2}">
     {/block:ifTwoSidebarImages}
-	
+    
+    
+	<h1><a href="/">{text:main title}</a></h1>
     
 	<div id="description">
     	{text:description}
