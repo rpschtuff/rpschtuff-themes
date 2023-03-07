@@ -244,7 +244,7 @@ hr {
 
 #sidebar h1 {
 	background:none;
-	margin:-10px;
+	margin:0 -10px;
 }
 
 #sidebar h1 a {
@@ -257,7 +257,6 @@ hr {
 	margin-left:50px;
 	max-height:300px;
 	object-fit:cover;
-	margin-bottom:-10px;
 	{block:ifCircleSidebarImage}
 	border-radius:50%;
 	{/block:ifCircleSidebarImage}
@@ -990,6 +989,8 @@ div.npf-link-block.no-poster .title {
 <div id="sidebar">
     
     
+    <h1><a href="/">{text:main title}</a></h1>
+    
     {block:ifNotTwoSidebarImages}
     	<img class="sb1" src="{image:sidebar 1}">
     {/block:ifNotTwoSidebarImages}
@@ -999,8 +1000,6 @@ div.npf-link-block.no-poster .title {
         <img class="sb2" src="{image:sidebar 2}">
     {/block:ifTwoSidebarImages}
     
-    
-	<h1><a href="/">{text:main title}</a></h1>
     
 	<div id="description">
     	{text:description}
