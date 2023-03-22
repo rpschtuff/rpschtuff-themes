@@ -1266,24 +1266,28 @@ div.npf-link-block.no-poster .title {
 
    		 <!-- ORIGINAL ANSWER -->
         	{block:Answerer}
-
+        	
    			 <!-- ORIGINAL ANSWERER AVATAR -->
+   			 <div class="poster {Username}">
             	<img src="{AnswererPortraitURL-64}">
 
    			 <!-- ORIGINAL ANSWERER URL -->
             	{block:HasPermalink}<a href="{Permalink}" target="_blank">{/block:HasPermalink}
             		 {Answerer}
             	{block:HasPermalink}</a>{/block:HasPermalink}
+            </div>
 
    			 <!-- ORIGINAL ANSWER -->
+   			 <div class="postercontent {Username}">
             	{Answer}
+            </div>
 
    	 	{/block:Answerer}
 
    		 <!-- REBLOG ADDITIONS -->
         	{block:Reblogs}
            	 
-            	<div class="poster {Username}"></div>
+            	<div class="poster {Username}">
    				 <!-- REBLOG USER AVATAR (ACTIVE) -->
                 	{block:IsActive}
    		         	<img src="{PortraitURL-64}">
