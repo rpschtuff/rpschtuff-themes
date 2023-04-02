@@ -13,19 +13,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 
-<!--
-        NPF images fix v3.0 by @glenthemes [2021]
-        💌 git.io/JRBt7
---->
-<script src="//npf-images-v3.github.io/script.js"></script>
-<link rel="stylesheet" href="//npf-images-v3.github.io/recon.css">
-<style tmblr-npf>
-:root {
-    --NPF-Caption-Spacing:1em;
-    --NPF-Image-Spacing:4px;
-}
-</style>
-
 <meta name="image:sidebar 1" content="https://64.media.tumblr.com/33d2c98691939135244c99c5cf1d2070/572067e041a60858-59/s2048x3072/b21a93cc7bc54a81968976da7015bed9694442d2.png" />
 <meta name="image:sidebar 2" content="https://64.media.tumblr.com/55d33e1af08a7283cc401c2513ab5e83/572067e041a60858-ed/s2048x3072/41ca760ebbc833eacac0a878c6d1443cbae5afcf.png" />
 <meta name="color:accent background" content="#5b3545" />
@@ -244,7 +231,7 @@ hr {
 	width:300px;
 	left:0;
 	top:0;
-	height:100%;
+	height:90%;
 	padding:10% 20px;
 	overflow-y:scroll;
 	{block:ifDarkTheme}
@@ -290,7 +277,7 @@ hr {
 }
 
 #description {
-	margin-top:10px;
+	margin:10px 0 80px 0;
 }
 
 #nav {
@@ -435,7 +422,7 @@ h1 {
 	padding:20px 15px 15px 15px;
 }
 
-p + h1, h2 + h1, h1 + h1, h3 + h1, .npf_row + h1, .npf_inst + h1 {
+p + h1, h2 + h1, h1 + h1, h3 + h1 {
     margin-top:15px;
 }
 
@@ -1266,28 +1253,24 @@ div.npf-link-block.no-poster .title {
 
    		 <!-- ORIGINAL ANSWER -->
         	{block:Answerer}
-        	
+
    			 <!-- ORIGINAL ANSWERER AVATAR -->
-   			 <div class="poster {Username}">
             	<img src="{AnswererPortraitURL-64}">
 
    			 <!-- ORIGINAL ANSWERER URL -->
             	{block:HasPermalink}<a href="{Permalink}" target="_blank">{/block:HasPermalink}
             		 {Answerer}
             	{block:HasPermalink}</a>{/block:HasPermalink}
-            </div>
 
    			 <!-- ORIGINAL ANSWER -->
-   			 <div class="postercontent {Username}">
             	{Answer}
-            </div>
 
    	 	{/block:Answerer}
 
    		 <!-- REBLOG ADDITIONS -->
         	{block:Reblogs}
            	 
-            	<div class="poster {Username}">
+            	<div class="poster {Username}"></div>
    				 <!-- REBLOG USER AVATAR (ACTIVE) -->
                 	{block:IsActive}
    		         	<img src="{PortraitURL-64}">
