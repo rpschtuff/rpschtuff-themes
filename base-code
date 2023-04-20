@@ -1285,7 +1285,7 @@ a.poll-row {
             </div>
             <div class="tags">
                 {block:HasTags}
-                    {block:Tags}<a href="{TagURL}">#{Tag}</a>{block:Tags}
+                    {block:Tags}<a href="{TagURL}">#{Tag}</a> {block:Tags}
                 {/block:HasTags}
             </div>
         </div>
