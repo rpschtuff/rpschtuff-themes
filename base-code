@@ -57,6 +57,7 @@
 	<meta name="if:container theme" content="1" />
 	<meta name="if:sidebar background" content="1" />
 	<meta name="if:navigation symbols" content="0" />
+	<meta name="if:rounded corners" content="0" />
 	<meta name="text:container position from left" content="550px" />
 	<meta name="text:sidebar position from top" content="410px" />
 	<meta name="text:sidebar position from left" content="50px" />
@@ -200,6 +201,9 @@ pre {
     width:500px;
     border:1px solid {color:borders};
     background:{color:posts};
+    {block:ifRoundedCorners}
+    border-radius:10px;
+    {/block:ifRoundedCorners}
     {/block:ifContainerTheme}
     {block:ifNotContainerTheme}
     position:absolute;
@@ -216,6 +220,9 @@ pre {
     border:1px solid {color:borders};
     margin-bottom:40px;
     background:{color:posts};
+    {block:ifRoundedCorners}
+    border-radius:10px;
+    {/block:ifRoundedCorners}
     {/block:ifNotContainerTheme}
 }
 
@@ -377,7 +384,13 @@ ul {
     border:1px solid {color:borders};
     max-height:400px;
     overflow-y:scroll;
+    {block:ifRoundedCorners}
+    border-radius:10px;
+    {/block:ifRoundedCorners}
     {/block:ifSidebarBackground}
+    {block:ifNotSidebarBackground}
+    text-shadow:0 0 10px {color:background};
+    {/block:ifNotSidebarBackground}
 }
 
 #sidebar #title {
@@ -397,6 +410,9 @@ ul {
 
 #sidebar #title a {
     color:{color:sidebar title};
+    {block:ifNotSidebarBackground}
+    text-shadow:0 0 10px {color:background};
+    {/block:ifNotSidebarBackground}
 }
 
 #description {
@@ -428,12 +444,20 @@ ul {
     font-size:1.1em;
     letter-spacing:1px;
     color:{color:sidebar links};
+    {block:ifNotSidebarBackground}
+    text-shadow:0 0 10px {color:background};
+    {/block:ifNotSidebarBackground}
 }
 
 .pagination {
+    {block:ifSidebarBackground}
     border-top:1px solid {color:borders};
     padding:10px 20px 0 20px;
     margin:20px -20px -10px -20px;
+    {/block:ifSidebarBackground}
+    {block:ifNotSidebarBackground}
+    margin-top:5px;
+    {/block:ifNotSidebarBackground}
     text-align:center;
 }
  
@@ -605,7 +629,9 @@ a.poll-row {
     margin-bottom:5px;
     padding:5px;
     border:1px solid {color:borders};
+    {block:ifRoundedCorners}
     border-radius:10px;
+    {/block:ifRoundedCorners}
     background:{color:posts};
 }
 
@@ -678,6 +704,9 @@ a.poll-row {
     font-size:0.7em;
     text-transform:uppercase;
     line-height:120%;
+    {block:ifRoundedCorners}
+    border-radius:10px;
+    {/block:ifRoundedCorners}
 }
 
 #credit a strong {
