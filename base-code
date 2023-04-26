@@ -619,6 +619,7 @@ a.poll-row {
 .stat .r {
     float:right;
     padding-left:2px;
+    background:{color:posts};
 }
 
 .listitem {
