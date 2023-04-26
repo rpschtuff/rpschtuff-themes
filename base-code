@@ -614,6 +614,7 @@ a.poll-row {
 	letter-spacing:1px;
 	font-family:{text:bold font};
 	background:{color:posts};
+	font-size:{text:bold font size};
 }
 
 .stat .r {
