@@ -135,6 +135,9 @@ body {
 	font-size:0.9em;
 	letter-spacing:1px;
 	z-index:99999;
+	{block:ifRoundedCorners}
+    border-radius:10px;
+    {/block:ifRoundedCorners}
 	transition:0.7s ease-in-out;
             	-o-transition:0.7s ease-in-out;
             	-ms-transition:0.7s ease-in-out;
@@ -610,6 +613,7 @@ a.poll-row {
     color:{color:bold};
 	letter-spacing:1px;
 	font-family:{text:bold font};
+	background:{color:posts};
 }
 
 .stat .r {
