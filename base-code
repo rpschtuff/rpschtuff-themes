@@ -73,7 +73,7 @@
 	<meta name="text:sidebar title font" content="Phudu" />
 	<meta name="text:sidebar title weight" content="bold" />
 	<meta name="text:main title size" content="2em" />
-	<meta name="text:subtitle size" content"1.5em" />
+	<meta name="text:subtitle size" content="1.5em" />
 	<meta name="text:sidebar title" content="title" />
 	<meta name="text:sidebar description" content="description" />
 	<meta name="text:nav symbol" content="✦" />
@@ -266,6 +266,7 @@ h2, .npf_quote, .npf_quirky {
     font-size:{text:subtitle size} !important;
     line-height:120%;
     margin-bottom:-0.25em;
+    font-style:{text:italic font style};
 }
 
 .posts.serifhand .npf_quote, .posts.serifhand .npf_quirky, .posts.sansserifhand .npf_quirky, .posts.sansserifhand .npf_quote {
