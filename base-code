@@ -68,10 +68,12 @@
 	<meta name="text:bold font size" content="1.1em" />
 	<meta name="text:italic font" content="Oooh Baby" />
 	<meta name="text:italic font size" content="1.3em" />
-	<meta name="text:italic font style" content="normal" />
+	<meta name="select:italic font style" content="italic" title="italic" />
+	<meta name="select:italic font style" content="normal" title="normal" />
 	<meta name="text:sidebar title size" content="2em" />
 	<meta name="text:sidebar title font" content="Phudu" />
-	<meta name="text:sidebar title weight" content="bold" />
+	<meta name="select:sidebar title weight" content="bold" title="bold" />
+	<meta name="select:sidebar title weight" content="normal" title="normal" />
 	<meta name="text:main title size" content="2em" />
 	<meta name="text:subtitle size" content="1.5em" />
 	<meta name="text:sidebar title" content="title" />
@@ -175,7 +177,7 @@ i, em, italic {
     color:{color:italic};
     font-family:{text:italic font};
     font-size:{text:italic font size};
-    font-style:{text:italic font style};
+    font-style:{select:italic font style};
 }
 
 pre {
@@ -266,7 +268,7 @@ h2, .npf_quote, .npf_quirky {
     font-size:{text:subtitle size} !important;
     line-height:120%;
     margin-bottom:-0.25em;
-    font-style:{text:italic font style};
+    font-style:{select:italic font style};
 }
 
 .posts.serifhand .npf_quote, .posts.serifhand .npf_quirky, .posts.sansserifhand .npf_quirky, .posts.sansserifhand .npf_quote {
@@ -402,7 +404,7 @@ ul {
     font-size:{text:sidebar title size};
     font-family:{text:sidebar title font};
     text-align:center;
-    font-weight:{text:sidebar title weight};
+    font-weight:{select:sidebar title weight};
     {block:ifSidebarBackground}
     border-bottom:1px solid {color:borders};
     padding-bottom:0.5em;
@@ -557,7 +559,7 @@ a.poll-row {
     color:{color:italic};
     font-family:{text:italic font};
     font-size:{text:italic font size};
-    font-style:{text:italic font style};
+    font-style:{select:italic font style};
 }
 
 .source {
