@@ -79,6 +79,7 @@ $(document).ready(function() {
 
 <style>
 
+/* CHANGE COLORS HERE */
 :root {
     --background: #ededed;
     --text: #444444;
