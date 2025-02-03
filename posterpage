@@ -1,0 +1,375 @@
+<!--
+
+FANDOM TAGS PAGE BY PLOPPYTHESPACESHIP
+
+- Edit however you wish.
+- Don't use for any paid commission work. Free commissions are fine.
+- Don't claim as your own.
+
+Isotope Combo Filters are by magnusthemes.
+
+Poster images are 250x375px, and will automatically crop/resize.
+
+-->
+
+<html>
+ 
+ 
+<head>
+ 
+<title>{Title}</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<script src="//pull.cappuccicons.com/cpf.js"></script> 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+<script src="https://static.tumblr.com/p0knose/FpAp5c11c/magnusthemes.combofilters.js"></script>
+
+<script>
+$(document).ready(function() {
+ var $container = $("#grid"); // the container with all the elements to filter inside
+ var filters = {}; //should be outside the scope of the filtering function
+ /* --- read the documentation on isotope.metafizzy.co for more options --- */
+ var $grid = $container.isotope({
+   itemSelector: ".poster", // the elements to filter
+   percentPosition: true // put true if you use percentage widths, otherwise put false
+ });
+ $(".option-set a").click(function(e) {
+   var $this = $(this); // cache the clicked link
+   var filterAttr = "data-filter-value";
+   var filterValue = $this.attr(filterAttr); // cache the filter
+   var $optionSet = $this.parents(".option-set"); // cache the parent element
+   var group = $optionSet.attr("data-filter-group"); // cache the parent filter group
+   var filterGroup = filters[group];
+   if (!filterGroup) {
+     filterGroup = filters[group] = [];
+   }
+   var $selectAll = $optionSet.find('a['+filterAttr+'=""]'); // the 'select all' button in the current group
+   var activeClass = "selected", // the class for active links
+     exclClass = "exclusive"; // the class for exclusive groups
+ comboFiltering($this,filters,filterAttr,filterValue,$optionSet,group,$selectAll,activeClass,exclClass);
+   var comboFilter = getComboFilter(filters);
+   $grid.isotope({
+     filter: comboFilter
+   });
+   $this.toggleClass(activeClass);
+   e.preventDefault();
+ });
+});
+</script>
+
+<script src="http://static.tumblr.com/rzl30kg/eAxm7a751/jquery.style-my-tooltips.js"></script>
+<script>
+   (function($){
+       $(document).ready(function(){
+           $("[title]").style_my_tooltips({
+               tip_follows_cursor:true,
+               tip_delay_time:200,
+               tip_fade_speed:300
+           }
+               );
+       });
+   })(jQuery);
+</script>
+
+<style>
+
+:root {
+    --background: #ededed;
+    --text: #444444;
+    --accent: #644B74;
+    --sidebar-text: #ffffff;
+    --link: #48A1B4;
+    --borders: #ffffff;
+}
+
+body {
+    background:var(--background);
+    font-family:'Roboto';
+    font-size:0.9em;
+    line-height:1.4em;
+    color:var(--text);
+}
+
+a {
+    color:var(--link);
+    text-decoration:none;
+    transition:0.4s;
+}
+
+a:hover {
+    color:var(--accent);
+    transition:0.4s;
+}
+
+#sidebar {
+    position:fixed;
+    width:225px;
+    height:100%;
+    background:var(--borders);
+    box-shadow:3px 3px 4px rgba(0,0,0,0.1);
+    padding:40px;
+    margin:-10px 0 0 -10px;
+    text-shadow:1px 1px 2px rgba(0,0,0,0.1);
+}
+
+#sidebar h1 {
+    text-transform:uppercase;
+    font-weight:900;
+    font-size:3em;
+    color:var(--accent);
+    margin:50px 0 10px 0;
+    font-family:'DM Serif Text';
+}
+
+#nav {
+    margin-bottom:50px;
+}
+
+#nav a {
+    font-size:0.8em;
+    text-transform:uppercase;
+}
+
+#sidebar h3 {
+    text-transform:uppercase;
+    font-weight:400;
+    font-size:1.3em;
+    letter-spacing:2px;
+    margin-left:10px;
+    font-family:'DM Serif Text';
+}
+
+ul.filter {
+    list-style-type:none;
+    text-transform:uppercase;
+    margin:-10px 0 30px 10px;
+}
+
+ul.filter li {
+    margin-left:-10px;
+}
+
+ul.filter li .selected {
+    font-weight:800;
+    color:var(--accent);
+    letter-spacing:1px;
+}
+
+ul.filter li .selected:before {
+    content:"➤ ";
+    margin-left:-26px;
+    padding-right:6px;
+}
+
+#grid {
+    position:fixed;
+    width:calc(100% - 400px);
+    left:300px;
+    padding:30px 50px;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    align-items:center;
+}
+
+.poster {
+    width:250px;
+    height:375px;
+    border:5px solid var(--borders);
+    margin:15px;
+    box-shadow:3px 3px 4px rgba(0,0,0,0.1);
+    text-shadow:1px 1px 2px #000;
+    transition:0.4s;
+    text-align:center;
+    position:relative;
+    z-index:1;
+}
+
+.poster:before {
+    content:"";
+    display:block;
+    position:absolute;
+    width:250px;
+    height:375px;
+    background:var(--accent);
+    opacity:0;
+    z-index:4;
+    transition:0.4s;
+}
+
+.poster:hover:before {
+    opacity:0.8;
+    transition:0.4s;
+}
+
+.poster img {
+    width:250px;
+    height:375px;
+    object-fit:cover;
+}
+
+.poster a {
+    color:#fff;
+}
+
+.poster .info {
+    margin:0;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translateX(-50%) translateY(-50%);
+    padding:15px;
+    max-width:190px;
+    width:190px;
+    color:#fff;
+    z-index:5;
+    opacity:0;
+    transition:0.4s;
+    max-height:345px;
+    overflow-y:scroll;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+    overflow:-moz-scrollbars-none;
+}
+
+.poster h2 {
+    font-size:1.4em;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-family:'DM Serif Text';
+    transition:0.4s;
+}
+
+.poster h2 a:hover {
+    letter-spacing:5px;
+}
+
+.poster:hover .info {
+    opacity:1;
+    transition:0.4s;
+}
+
+.poster .list {
+    margin-top:25px;
+}
+
+.poster .list a {
+    display:block;
+    text-transform:uppercase;
+    font-weight:500;
+    margin:15px 0;
+    line-height:110%;
+}
+
+.poster .list a:hover {
+    letter-spacing:2px;
+    margin:15px -15px;
+}
+
+/* DO NOT TOUCH */
+#credit a {
+    position:fixed;
+    right:10px;
+    bottom:10px;
+    text-align:center;
+    font-weight:700;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-size:0.7em;
+    line-height:90%;
+}
+/* DO NOT TOUCH */
+ 
+</style>
+
+</head>
+<body>
+
+<div id="sidebar">
+    
+    <!-- CHANGE PAGE TITLE HERE -->
+    <h1>Fandoms</h1>
+    
+    <div id="nav">
+        <a href="/">< back to blog</a>
+    </div>
+    
+    <div id="filters">
+    
+        <!-- FILTERS EXPLAINED
+        
+        If you want to be able to select multiple filters in each section, remove the word 'exclusive'.
+        
+        The quotes after 'data-filter-group' must be unique for each section. This ensures that the filter sections work independently from each other.
+        
+        The first <li> line must be there in each section. This is your All/Reset button.
+        
+        Each <li> line afterward is a new filter. The quotes after 'data-filter-value' should include a period and a single-world filter (see examples below).
+        
+        Copy and paste as many filter sections as you'd like!
+        
+        -->
+        
+        <!-- START OF FILTER SECTION -->
+        <h3>Category 1</h3>
+        <ul class="filter option-set exclusive" data-filter-group="category1">
+            <li><a href="#" data-filter-value="" class="selected">All</a></li>
+            <li><a href="#" data-filter-value=".filter1">Filter 1</a></li>
+            <li><a href="#" data-filter-value=".filter2">Filter 2</a></li>
+            <li><a href="#" data-filter-value=".filter3">Filter 3</a></li>
+        </ul>
+        <!-- END OF FILTER SECTION -->
+        
+        <!-- START OF FILTER SECTION -->
+        <h3>Category 2</h3>
+        <ul class="filter option-set exclusive" data-filter-group="category2">
+            <li><a href="#" data-filter-value="" class="selected">All</a></li>
+            <li><a href="#" data-filter-value=".filtera">Filter A</a></li>
+            <li><a href="#" data-filter-value=".filterb">Filter B</a></li>
+            <li><a href="#" data-filter-value=".filterc">Filter C</a></li>
+            <li><a href="#" data-filter-value=".filterd">Filter D</a></li>
+        </ul>
+        <!-- END OF FILTER SECTION -->
+        
+    </div>
+    
+</div>
+
+
+<div id="grid">
+    
+    <!-- START OF POSTER -->
+    <div class="poster filter1 filtera">
+        <img src="URL">
+        <div class="info">
+            <h2><a href="/tagged/TAG">Fandom</a></h2>
+            <!-- ADDITIONAL LINKS (DELETE IF NOT NEEDED) -->
+            <div class="list">
+                <a href="/tagged/TAG">Link</a>
+                <a href="/tagged/TAG">Link</a>
+                <a href="/tagged/TAG">Link</a>
+            </div>
+            <!-- END OF ADDITIONAL LINKS -->
+        </div>
+    </div>
+    <!-- END OF POSTER -->
+    
+</div>
+
+
+
+<!-- DO NOT TOUCH -->
+<div id="credit">
+    <a href="http://ploppythespaceship.tumblr.com">theme</a>
+</div>
+<!-- DO NOT TOUCH -->
+
+
+</body>
+</html>
