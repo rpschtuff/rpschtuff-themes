@@ -360,6 +360,8 @@ ul.filter li .selected:before {
         </div>
     </div>
     <!-- END OF POSTER -->
+
+<!-- NOTE: If a longer title has its line breaks in a weird spot, or it looks funny when you hover over it, add <br> to manually force a line break in a more convenient spot. -->
     
 </div>
 
