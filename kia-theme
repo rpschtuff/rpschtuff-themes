@@ -85,7 +85,7 @@ attribute:"title"
 </script>
 
 
-<script src="//pull.cappuccicons.com/cpf.js"></script>
+<link href="https://iconsax.gitlab.io/i/icons.css" rel="stylesheet">
 
 
 </head>
@@ -958,10 +958,10 @@ div.npf-link-block.no-poster .title {
 	{block:Pagination}
     <div id="pagination">
    	 {block:PreviousPage}
-   		 <a href="{PreviousPage}"><i class="cp cp-arrow-left"></i></a>
+   		 <a href="{PreviousPage}"><i class="iconsax" icon-name="arrow-left"></i></a>
    	 {/block:PreviousPage}
    	 {block:NextPage}
-   		 <a href="{NextPage}"><i class="cp cp-arrow-right"></i></a>
+   		 <a href="{NextPage}"><i class="iconsax" icon-name="arrow-right"></i></a>
    	 {/block:NextPage}
     </div>
 	{/block:Pagination}
