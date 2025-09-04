@@ -286,7 +286,6 @@ hr {
 
 #sidebarpics.sb1 img {
 	width:300px;
-	margin-left:25px;
 	height:auto;
 	max-height:300px;
 	object-fit:cover;
