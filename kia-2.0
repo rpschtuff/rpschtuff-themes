@@ -285,7 +285,8 @@ hr {
 }
 
 #sidebarpics.sb1 img {
-	width:300px;
+	width:250px;
+	margin-left:25px;
 	height:auto;
 	max-height:300px;
 	object-fit:cover;
@@ -475,6 +476,10 @@ p + h1, h2 + h1, h1 + h1, h3 + h1 {
 
 p:empty + h1 {
     margin-top:-20px;
+}
+
+.npf_inst + h1 {
+    margin-top:20px;
 }
 
 h2 {
