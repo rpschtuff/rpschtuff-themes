@@ -952,7 +952,9 @@ p.tmblr-attribution a {
 <div id="sidebar">
 
     {block:ifMoveTitleAboveImages}
+    {block:ifMainTitle}
 	<h1 style="margin-bottom:15px;"><a href="/">{text:main title}</a></h1>
+	{/block:ifMainTitle}
 	{/block:ifMoveTitleAboveImages}
 
     <div id="sidebarpics" class="{select:sidebar images}">
@@ -967,7 +969,9 @@ p.tmblr-attribution a {
     </div>
 	
 	{block:ifNotMoveTitleAboveImages}
+	{block:ifMainTitle}
 	<h1><a href="/">{text:main title}</a></h1>
+	{/block:ifMainTitle}
 	{/block:ifNotMoveTitleAboveImages}
     
 	<div id="description">
