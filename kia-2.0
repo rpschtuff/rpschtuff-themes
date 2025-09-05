@@ -55,6 +55,7 @@
 <meta name="select:color palette" content="dark" />
 <meta name="select:color palette" content="custom" />
 <meta name="if:circle sidebar image" content="0" />
+<meta name="if:move title above images" content="0" />
 <meta name="text:main title" content="title" />
 <meta name="text:description" content="custom description" />
 <meta name="text:home title" content="home" />
@@ -261,6 +262,13 @@ hr {
 	overflow-y:scroll;
 	text-align:center;
 	background:var(--highlight);
+	-ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox, Safari 18.2+, Chromium 121+ */
+    overflow: -moz-scrollbars-none;
+}
+
+#sidebar::webkit-scrollbar {
+    display:none;
 }
 
 #sidebar h1 {
@@ -282,6 +290,7 @@ hr {
 #sidebarpics img {
     display:none;
     object-fit:cover;
+    flex-basis:auto;
 }
 
 #sidebarpics.sb1 img {
@@ -366,8 +375,8 @@ hr {
 }
 
 #pagination {
-	margin-top:10px;
-	width:300px;
+	margin:40px 0;
+	width:540px;
 	text-align:center;
 }
 
@@ -375,13 +384,13 @@ hr {
 	text-decoration:none;
 	margin:0 5px;
 	text-decoration:none;
+	background:var(--highlight);
+	padding:5px;
 }
 
 #pagination a.current {
-    color:{color:accent text};
-    font-weight:bold;
-    font-size:1.1em;
-    font-family:{select:accent font};
+    background:{color:accent background};
+    color:{color:accent background text};
 }
 
 #pagination i {
@@ -475,10 +484,6 @@ p + h1, h2 + h1, h1 + h1, h3 + h1 {
 
 p:empty + h1 {
     margin-top:-20px;
-}
-
-.npf_inst + h1 {
-    margin-top:20px;
 }
 
 h2 {
@@ -941,6 +946,10 @@ p.tmblr-attribution a {
 
 <div id="sidebar">
 
+    {block:ifMoveTitleAboveImages}
+	<h1 style="margin-bottom:15px;"><a href="/">{text:main title}</a></h1>
+	{/block:ifMoveTitleAboveImages}
+
     <div id="sidebarpics" class="{select:sidebar images}">
     
         <img src="{image:sidebar 1}">
@@ -952,22 +961,13 @@ p.tmblr-attribution a {
         
     </div>
 	
+	{block:ifNotMoveTitleAboveImages}
 	<h1><a href="/">{text:main title}</a></h1>
+	{/block:ifNotMoveTitleAboveImages}
     
 	<div id="description">
     	{text:description}
 	</div>
-    
-	
-    {block:Pagination}
-    <div id="pagination">
-    {block:PreviousPage}<a href="{PreviousPage}">&laquo;</a>{/block:PreviousPage}
-    {block:JumpPagination length="5"}
-    {block:CurrentPage}<a class="current">{PageNumber}</a>{/block:CurrentPage}
-    {block:JumpPage}<a href="{URL}">{PageNumber}</a>{/block:JumpPage}{/block:JumpPagination}
-    {block:NextPage}<a href="{NextPage}">&raquo;</a>{/block:NextPage}
-    </div>
-    {/block:Pagination}
     
 </div>
 
@@ -1530,6 +1530,16 @@ p.tmblr-attribution a {
 
 
 {/block:Posts}
+
+{block:Pagination}
+    <div id="pagination">
+    {block:PreviousPage}<a href="{PreviousPage}">&laquo;</a>{/block:PreviousPage}
+    {block:JumpPagination length="5"}
+    {block:CurrentPage}<a class="current">{PageNumber}</a>{/block:CurrentPage}
+    {block:JumpPage}<a href="{URL}">{PageNumber}</a>{/block:JumpPage}{/block:JumpPagination}
+    {block:NextPage}<a href="{NextPage}">&raquo;</a>{/block:NextPage}
+    </div>
+    {/block:Pagination}
 
 
 </div>
