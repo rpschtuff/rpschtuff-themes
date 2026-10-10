@@ -1,0 +1,759 @@
+<!--
+
+Hello! Thanks for checking out this page!
+
+Search for "CUSTOMIZE" to find where you can edit things.
+
+I don't recommend altering beyond that unless you're confident.
+
+For the filters, there are four places to edit.
+I recommend starting with the fourth one and working backwards.
+
+-->
+
+<html>
+ 
+<head>
+ 
+<!-- CUSTOMIZE: TAB TITLE -->
+<title>Fic Recs</title>
+<!-- END: TAB TITLE -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+<link href="https://iconsax.gitlab.io/i/icons.css" rel="stylesheet">
+
+<base target="_blank">
+
+<style>
+
+
+/* CUSTOMIZE: COLORS */
+:root {
+    --background:#f6f6f6;
+    --fic-background:#ffffff;
+    --tags-background:#f6f6f6;
+    --tags-text:#444444;
+    --tags-icon:#5682b7;
+    --borders:#eeeeee;
+    --text:#444444;
+    --accent:#5682b7;
+    --links:#bf5454;
+}
+/* END: COLORS */
+
+@font-face {
+  font-family:'iconsax';
+  src: url('https://iconsax.gitlab.io/i/files/iconsax.woff2') format('woff2'),
+       url('https://iconsax.gitlab.io/i/files/iconsax.woff') format('woff');
+  font-weight:normal;
+  font-style:normal;
+}
+
+* {
+    transition:0.3s;
+}
+
+body {
+    background:var(--background);
+    color:var(--text);
+    font-family:'IBM Plex Sans';
+    font-size:14px;
+    line-height:1.4em;
+}
+
+#sidebar {
+    position:fixed;
+    left:0;
+    top:0;
+    height:calc(100% - 30px);
+    width:300px;
+    text-align:center;
+    background:var(--fic-background);
+    border-right:1px solid var(--borders);
+    padding:15px 15px 30px 15px;
+    overflow-y:scroll;
+    scrollbar-width:none;
+}
+
+#sidebar img {
+    width:150px;
+    height:150px;
+    object-fit:cover;
+    border-radius:50%;
+    border:1px solid var(--borders);
+    padding:5px;
+    margin:20px 0;
+}
+
+#sidebar h1 {
+    font-family:'IBM Plex Serif';
+    color:var(--accent);
+    font-size:28px !important;
+    letter-spacing:2px;
+    text-transform:lowercase;
+}
+
+#sidebar h1 small {
+    font-family:'IBM Plex Sans';
+    color:var(--text);
+    font-size:12px;
+    text-transform:uppercase;
+    font-weight:normal;
+    letter-spacing:3px;
+}
+
+#sidebar h2 {
+    text-transform:uppercase;
+    font-size:16px;
+    letter-spacing:2px;
+    margin-top:30px;
+    margin-bottom:10px;
+    color:var(--accent);
+}
+
+#sidebar label {
+    display:block;
+    opacity:0.8;
+    text-transform:uppercase;
+    cursor:pointer;
+}
+
+#grid {
+    position:absolute;
+    width:calc(100% - 330px - 100px);
+    min-height:100%;
+    overflow-y:scroll;
+    scrollbar-width:none;
+    left:330px;
+    top:0;
+    padding:50px;
+    columns:2;
+    column-gap:25px;
+}
+
+@media (max-width:1000px) {
+    #grid {
+        columns:1;
+    }
+}
+
+@media (min-width:1500px) {
+    #grid {
+        columns:3;
+    }
+}
+
+.fic {
+    background:var(--fic-background);
+    border:1px solid var(--borders);
+    border-radius:10px;
+    display:inline-block;
+    width:100%;
+    margin-bottom:25px;
+}
+
+.fic basics {
+    display:block;
+    border-bottom:1px solid var(--borders);
+    padding:15px;
+    line-height:1em;
+}
+
+.fic basics:before {
+    font-family:'iconsax' !important;
+    font-size:18px;
+    margin-left:10px;
+    margin-top:5px;
+    float:right;
+    opacity:0.5;
+}
+
+.fic.favorite basics:before {
+    content:"\eb1a";
+}
+
+.fic.series basics:before {
+    content:"\e98a";
+}
+
+.fic.series.favorite basics:before {
+    content:"\eb1a   \e98a";
+}
+
+.fic name {
+    display:block;
+    font-family:'IBM Plex Serif';
+    font-weight:bold;
+    font-size:20px;
+    color:var(--accent);
+    line-height:1.1em;
+    letter-spacing:1px;
+    margin-bottom:3px;
+    text-transform:lowercase;
+}
+
+.fic author {
+    font-weight:bold;
+    text-transform:uppercase;
+    font-size:12px;
+}
+
+.fic stat {
+    text-transform:uppercase;
+    font-size:0.8em;
+}
+
+.fic stat:before {
+    content:" · ";
+    margin:0 2px;
+}
+
+.fic name + stat:before {
+    content:"";
+    margin:0;
+}
+
+.fic tags {
+    display:block;
+    padding:15px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px;
+    border-bottom:1px solid var(--borders);
+}
+
+.fic tags * {
+    background:var(--tags-background);
+    color:var(--tags-text);
+    padding:0 5px;
+    border-radius:4px;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.fic tags *:before {
+    font-family:'iconsax' !important;
+    color:var(--tags-icon);
+    margin-right:3px;
+}
+
+/* CUSTOMIZE: TAG ICONS */
+/* To add/change, go to https://iconsax.gitlab.io/i/view/ */
+/* Find the name of the icon you want. */
+/* Go to https://iconsax.gitlab.io/i/icons.css */
+/* Search the icon name and find the code at the end of its line. */
+/* Add it using the pattern below. */
+.fic tags fandom:before {
+    content:"\eafe";
+}
+
+.fic tags pairing:before {
+    content:"\e801";
+}
+
+.fic tags character:before {
+    content:"\e8a1";
+}
+
+.fic tags tag:before {
+    content:"\23";
+}
+
+.fic tags warning:before {
+    content:"\e908";
+}
+/* END: TAG ICONS */
+
+.fic info {
+    display:block;
+    padding:15px;
+}
+
+.fic info excerpt {
+    display:block;
+    font-family:'IBM Plex Serif';
+    font-size:0.9em;
+    font-style:italic;
+    letter-spacing:0.5px;
+    margin-left:10px;
+    padding-left:15px;
+    border-left:1px solid var(--borders);
+    margin-bottom:15px;
+    opacity:0.9;
+}
+
+.fic summary {
+    display:block;
+}
+
+.fic info note {
+    display:block;
+    font-size:12px;
+    opacity:0.8;
+    margin-top:10px;
+}
+
+.fic a {
+    color:var(--links);
+    text-decoration:none;
+}
+
+.fic a:hover {
+    color:var(--accent);
+}
+
+.fic a.link {
+    display:block;
+    color:var(--links);
+    text-transform:uppercase;
+    text-decoration:none;
+    border-top:1px solid var(--borders);
+    border-radius:0 0 10px 10px;
+    text-align:right;
+    font-weight:bold;
+    font-size:13px;
+    letter-spacing:3px;
+    padding:10px;
+}
+
+.fic a.link:hover {
+    background:var(--links);
+    color:var(--fic-background);
+}
+
+.fic a.link:after {
+    font-family:'iconsax' !important;
+    content:"\e8ed";
+    margin-left:10px;
+}
+
+input[type="radio"] {
+    display:none;
+}
+
+
+/* CUSTOMIZE: FILTERS (SECTION 1) */
+/* Every filter should be added here. Follow the pattern shown. */
+/* Make sure there's a comma after each line but the last. */
+#all-fics:checked ~ #sidebar label[for="all-fics"],
+#favorite:checked ~ #sidebar label[for="favorite"],
+#all-fandoms:checked ~ #sidebar label[for="all-fandoms"],
+#doctor-who:checked ~ #sidebar label[for="doctor-who"],
+#good-omens:checked ~ #sidebar label[for="good-omens"],
+#star-trek:checked ~ #sidebar label[for="star-trek"],
+#all-tags:checked ~ #sidebar label[for="all-tags"],
+#fluff:checked ~ #sidebar label[for="fluff"],
+#angst:checked ~ #sidebar label[for="angst"],
+#hurt-comfort:checked ~ #sidebar label[for="hurt-comfort"],
+#whump:checked ~ #sidebar label[for="whump"],
+#all-ratings:checked ~ #sidebar label[for="all-ratings"],
+#general:checked ~ #sidebar label[for="general"],
+#teen:checked ~ #sidebar label[for="teen"],
+#mature:checked ~ #sidebar label[for="mature"],
+#explicit:checked ~ #sidebar label[for="explicit"] {
+    font-weight:bold;
+    color:var(--links);
+    letter-spacing:2px;
+    opacity:1;
+}
+/* END: FILTERS (SECTION 1) */
+
+
+/* CUSTOMIZE: FILTERS (SECTION 2) */
+/* Every filter should be added here except for the "show all" ones. */
+/* Follow the pattern shown. */
+/* Make sure there's a comma after each line but the last. */
+#favorite:checked ~ #grid .fic:not(.favorite),
+#doctor-who:checked ~ #grid .fic:not(.doctor-who),
+#good-omens:checked ~ #grid .fic:not(.good-omens),
+#star-trek:checked ~ #grid .fic:not(.star-trek),
+#fluff:checked ~ #grid .fic:not(.fluff),
+#angst:checked ~ #grid .fic:not(.angst),
+#hurt-comfort:checked ~ #grid .fic:not(.hurt-comfort) {
+    display:none;
+}
+/* END: FILTERS (SECTION 2) */
+ 
+</style>
+
+</head>
+<body>
+
+<!-- CUSTOMIZE: FILTERS (SECTION 3) -->
+<!-- Every filter should be added here. -->
+<!-- Each group should have a different name. -->
+<!-- The first filter of each group should say "checked". -->
+<!-- Each filter should have a different id. -->
+<!-- Follow the pattern shown. -->
+<input type="radio" name="favorites" id="all-fics" checked>
+<input type="radio" name="favorites" id="favorite">
+
+<input type="radio" name="fandoms" id="all-fandoms" checked>
+<input type="radio" name="fandoms" id="doctor-who">
+<input type="radio" name="fandoms" id="good-omens">
+<input type="radio" name="fandoms" id="star-trek">
+
+<input type="radio" name="tags" id="all-tags" checked>
+<input type="radio" name="tags" id="fluff">
+<input type="radio" name="tags" id="angst">
+<input type="radio" name="tags" id="hurt-comfort">
+
+<input type="radio" name="rating" id="all-ratings" checked>
+<input type="radio" name="rating" id="general">
+<input type="radio" name="rating" id="teen">
+<input type="radio" name="rating" id="mature">
+<input type="radio" name="rating" id="explicit">
+<input type="radio" name="rating" id="not-rated">
+<!-- END: FILTERS (SECTION 3) -->
+
+
+<div id="sidebar">
+    
+    <!-- CUSTOMIZE: SIDEBAR IMAGE -->
+    <!-- Delete this section if you don't want it. -->
+    <img src="https://placehold.co/150">
+    <!-- END: SIDEBAR IMAGE -->
+
+
+    <!-- CUSTOMIZE: SIDEBAR TITLE -->
+    <!-- Delete <br><small> to </small> if you don't want a subtitle. -->
+    <h1>Fic Recs<br><small>by You</small></h1>
+    <!-- END: SIDEBAR TITLE -->
+    
+    
+    <!-- CUSTOMIZE: FILTERS (SECTION 4) -->
+    <!-- The "h2" is the group title. -->
+    <!-- The "for" section should match what you have above. -->
+    <!-- The label is the display text and can be different. -->
+    <!-- Follow the pattern shown. -->
+    <h2>Favorites</h2>
+    <label for="all-fics">all</label>
+    <label for="favorite">favorites</label>
+    
+    <h2>Fandoms</h2>
+    <label for="all-fandoms">all</label>
+    <label for="doctor-who">doctor who</label>
+    <label for="good-omens">good omens</label>
+    <label for="star-trek">star trek</label>
+    
+    <h2>Tags</h2>
+    <label for="all-tags">all</label>
+    <label for="fluff">fluff</label>
+    <label for="angst">angst</label>
+    <label for="hurt-comfort">hurt/comfort</label>
+    
+    <h2>Rating</h2>
+    <label for="all-ratings">all</label>
+    <label for="general">general</label>
+    <label for="teen">teen</label>
+    <label for="mature">mature</label>
+    <label for="explicit">explicit</label>
+    <label for="not-rated">not rated</label>
+    <!-- END: FILTERS (SECTION 4) -->
+    
+    <br>
+    
+</div>
+
+<div id="grid">
+    
+    
+    <!-- CUSTOMIZE: FICS (NOTES) -->
+    
+    <!-- Add the filters here. Always include "fic". -->
+    <!-- Adding "favorite" will add a star to the fic. -->
+    <!-- Adding "series" will add a series indicator to the fic. -->
+    <div class="fic favorite doctor-who general fluff">
+    
+        <basics>
+            
+            <!-- Add the fic title here. -->
+            <name>What a Lovely Title</name>
+            
+            <!-- Add the fic author here. -->
+            <author>wonderful-person</author>
+            
+            <!-- Add stats here, like word count, rating, etc. -->
+            <!-- Include as many as you want. -->
+            <stat>g</stat>
+            <stat>5k</stat>
+            <stat>12/31/25</stat>
+            <stat>complete</stat>
+            
+        </basics>
+        
+        <!-- Add the tags and labels here. -->
+        <!-- Include as many or as few as you want. -->
+        <tags>
+            <fandom>doctor who</fandom>
+            <pairing>ten/rose</pairing>
+            <character>rose tyler</character>
+            <tag>fluff</tag>
+            <warning>content warning</warning>
+        </tags>
+        
+        <info>
+        
+            <!-- Add the fic excerpt here. -->
+            <!-- Delete from <excerpt> to </excerpt> if you don't want it. -->
+            <excerpt>
+                Fic excerpt here. Lorem ipsum bacon and so on and so forth. I am good at placeholder text.</p>
+                You can include paragraph breaks if you want.
+            </excerpt>
+            
+            <!-- Add the fic summary here. -->
+            <summary>
+                Fic summary here. Again, I am good at placeholder text. Cupcakes and lollipops or something. Hooray!
+            </summary>
+            
+            <!-- Add a note about the fic here. -->
+            <!-- Delete from <note> to </note> if you don't want it. -->
+            <note>
+                Fic note here. Your own review, or something else.
+            </note>
+            
+        </info>
+        
+        <!-- Add the fic link here. -->
+        <a class="link" href="URL">read on site</a>
+        
+    </div>
+    <!-- END: FICS (NOTES) -->
+    
+    
+    
+    <!-- CUSTOMIZE: FICS (NO NOTES) -->
+    <!-- This is the same structure as above, with the notes removed. -->
+    <!-- That should make it easier to copy and paste. -->
+    
+    <div class="fic">
+        <basics>
+            <name>fic title</name>
+            <author>author</author>
+            <stat>rating</stat>
+            <stat>length</stat>
+            <stat>date</stat>
+            <stat>status</stat>
+        </basics>
+        <tags>
+            <fandom>fandom</fandom>
+            <pairing>pairing</pairing>
+            <character>character</character>
+            <tag>tag</tag>
+            <warning>warning</warning>
+        </tags>
+        <info>
+            <excerpt>
+                Fic excerpt here.
+            </excerpt>
+            <summary>
+                Fic summary here.
+            </summary>
+            <note>
+                Fic note here.
+            </note>
+        </info>
+        <a class="link" href="URL">read on site</a>
+    </div>
+    
+    <!-- END: FICS (NO NOTES) -->
+    
+    
+    
+    <!-- CUSTOMIZE: FICS (NO NOTES) -->
+    <!-- This is the same structure as above, with the notes removed. -->
+    <!-- That should make it easier to copy and paste. -->
+    
+    <div class="fic">
+        <basics>
+            <name>fic title</name>
+            <author>author</author>
+            <stat>rating</stat>
+            <stat>length</stat>
+            <stat>date</stat>
+            <stat>status</stat>
+        </basics>
+        <tags>
+            <fandom>fandom</fandom>
+            <pairing>pairing</pairing>
+            <character>character</character>
+            <tag>tag</tag>
+            <warning>warning</warning>
+        </tags>
+        <info>
+            <excerpt>
+                Fic excerpt here.
+            </excerpt>
+            <summary>
+                Fic summary here.
+            </summary>
+            <note>
+                Fic note here.
+            </note>
+        </info>
+        <a class="link" href="URL">read on site</a>
+    </div>
+    
+    <!-- END: FICS (NO NOTES) -->
+    
+    
+    
+    <!-- CUSTOMIZE: FICS (NO NOTES) -->
+    <!-- This is the same structure as above, with the notes removed. -->
+    <!-- That should make it easier to copy and paste. -->
+    
+    <div class="fic">
+        <basics>
+            <name>fic title</name>
+            <author>author</author>
+            <stat>rating</stat>
+            <stat>length</stat>
+            <stat>date</stat>
+            <stat>status</stat>
+        </basics>
+        <tags>
+            <fandom>fandom</fandom>
+            <pairing>pairing</pairing>
+            <character>character</character>
+            <tag>tag</tag>
+            <warning>warning</warning>
+        </tags>
+        <info>
+            <excerpt>
+                Fic excerpt here.
+            </excerpt>
+            <summary>
+                Fic summary here.
+            </summary>
+            <note>
+                Fic note here.
+            </note>
+        </info>
+        <a class="link" href="URL">read on site</a>
+    </div>
+    
+    <!-- END: FICS (NO NOTES) -->
+    
+    
+    
+    <!-- CUSTOMIZE: FICS (NO NOTES) -->
+    <!-- This is the same structure as above, with the notes removed. -->
+    <!-- That should make it easier to copy and paste. -->
+    
+    <div class="fic">
+        <basics>
+            <name>fic title</name>
+            <author>author</author>
+            <stat>rating</stat>
+            <stat>length</stat>
+            <stat>date</stat>
+            <stat>status</stat>
+        </basics>
+        <tags>
+            <fandom>fandom</fandom>
+            <pairing>pairing</pairing>
+            <character>character</character>
+            <tag>tag</tag>
+            <warning>warning</warning>
+        </tags>
+        <info>
+            <excerpt>
+                Fic excerpt here.
+            </excerpt>
+            <summary>
+                Fic summary here.
+            </summary>
+            <note>
+                Fic note here.
+            </note>
+        </info>
+        <a class="link" href="URL">read on site</a>
+    </div>
+    
+    <!-- END: FICS (NO NOTES) -->
+    
+    
+    
+    <!-- CUSTOMIZE: FICS (NO NOTES) -->
+    <!-- This is the same structure as above, with the notes removed. -->
+    <!-- That should make it easier to copy and paste. -->
+    
+    <div class="fic">
+        <basics>
+            <name>fic title</name>
+            <author>author</author>
+            <stat>rating</stat>
+            <stat>length</stat>
+            <stat>date</stat>
+            <stat>status</stat>
+        </basics>
+        <tags>
+            <fandom>fandom</fandom>
+            <pairing>pairing</pairing>
+            <character>character</character>
+            <tag>tag</tag>
+            <warning>warning</warning>
+        </tags>
+        <info>
+            <excerpt>
+                Fic excerpt here.
+            </excerpt>
+            <summary>
+                Fic summary here.
+            </summary>
+            <note>
+                Fic note here.
+            </note>
+        </info>
+        <a class="link" href="URL">read on site</a>
+    </div>
+    
+    <!-- END: FICS (NO NOTES) -->
+    
+    
+    
+    <!-- CUSTOMIZE: FICS (NO NOTES) -->
+    <!-- This is the same structure as above, with the notes removed. -->
+    <!-- That should make it easier to copy and paste. -->
+    
+    <div class="fic">
+        <basics>
+            <name>fic title</name>
+            <author>author</author>
+            <stat>rating</stat>
+            <stat>length</stat>
+            <stat>date</stat>
+            <stat>status</stat>
+        </basics>
+        <tags>
+            <fandom>fandom</fandom>
+            <pairing>pairing</pairing>
+            <character>character</character>
+            <tag>tag</tag>
+            <warning>warning</warning>
+        </tags>
+        <info>
+            <excerpt>
+                Fic excerpt here.
+            </excerpt>
+            <summary>
+                Fic summary here.
+            </summary>
+            <note>
+                Fic note here.
+            </note>
+        </info>
+        <a class="link" href="URL">read on site</a>
+    </div>
+    
+    <!-- END: FICS (NO NOTES) -->
+    
+    
+</div>
+
+</body>
+</html>
