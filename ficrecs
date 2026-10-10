@@ -335,6 +335,24 @@ input[type="radio"] {
     display:none;
 }
 
+/* DO NOT EDIT */
+#credit {
+    position:fixed;
+    right:15px;
+    bottom:15px;
+    font-size:1.3em;
+}
+
+#credit .iconsax {
+    color:var(--links);
+    text-decoration:none;
+}
+
+#credit .iconsax:hover {
+    color:var(--accent);
+}
+/* DO NOT EDIT */
+
 
 /* CUSTOMIZE: FILTERS (SECTION 1) */
 /* Every filter should be added here. Follow the pattern shown. */
@@ -754,6 +772,13 @@ input[type="radio"] {
     
     
 </div>
+
+
+<!-- DO NOT EDIT -->
+<div id="credit">
+    <i class="iconsax" icon-name="code-circle"></i>
+</div>
+<!-- DO NOT EDIT -->
 
 </body>
 </html>
